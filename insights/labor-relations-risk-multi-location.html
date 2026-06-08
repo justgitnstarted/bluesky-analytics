@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Labor Relations Risk Assessment for Multi-Location Employers | Blue Sky Analytics</title>
+<meta name="description" content="Multi-location employers face a labor relations challenge that single-facility assessments cannot address. Learn how to identify, compare, and prioritize union vulnerability across a distributed footprint.">
+<link rel="canonical" href="https://blue-skyiq.com/insights/labor-relations-risk-multi-location">
+<meta property="og:title" content="Labor Relations Risk Assessment for Multi-Location Employers">
+<meta property="og:description" content="Multi-location employers face a labor relations challenge that single-facility assessments cannot address. Learn how to identify, compare, and prioritize union vulnerability across a distributed footprint.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blue-skyiq.com/insights/labor-relations-risk-multi-location">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--sky-deep:#0a4a7c;--sky-mid:#1a6fab;--sky-bright:#2e8fd4;--sky-pale:#d6eaf8;--sky-mist:#eef6fc;--horizon:#c97d2e;--slate:#3a4a5c;--steel:#6b7f93;--cloud:#f0f5fa;--white:#ffffff;--ink:#0d1a26;--ink-soft:#2a3a4a;--rule:#dce6f0;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--white);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  .snb{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(10,74,124,0.08);box-shadow:0 2px 20px rgba(10,74,124,0.06);}
+  .snb-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+  .snb-mark{width:32px;height:32px;border-radius:7px;background:linear-gradient(135deg,var(--sky-deep),var(--sky-bright));display:flex;align-items:center;justify-content:center;}
+  .snb-mark svg{width:16px;height:16px;}
+  .snb-name{font-family:"Playfair Display",serif;font-size:.95rem;font-weight:700;color:var(--sky-deep);}
+  .snb-links{display:flex;gap:2rem;list-style:none;}
+  .snb-links a{color:var(--slate);text-decoration:none;font-size:.8rem;font-weight:400;letter-spacing:.03em;transition:color .3s;}
+  .snb-links a:hover{color:var(--sky-deep);}
+  .snb-cta{background:var(--sky-deep);color:var(--white);padding:.55rem 1.3rem;border-radius:4px;text-decoration:none;font-size:.76rem;font-weight:500;letter-spacing:.05em;transition:all .3s;}
+  .snb-cta:hover{background:var(--sky-mid);}
+  .ah{background:linear-gradient(135deg,var(--sky-deep) 0%,#0d5e9e 100%);padding:6.5rem 2rem 4.5rem;position:relative;overflow:hidden;}
+  .ah::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50px;background:var(--white);clip-path:ellipse(60% 100% at 50% 100%);}
+  .ah-in{max-width:780px;margin:0 auto;position:relative;z-index:1;}
+  .ah-cat{font-family:"IBM Plex Mono",monospace;font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem;}
+  .ah-cat::before{content:"";display:inline-block;width:20px;height:1px;background:#c9a84c;}
+  .ah h1{font-family:"Playfair Display",serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;line-height:1.15;color:var(--white);margin-bottom:1.2rem;}
+  .ah h1 em{font-style:italic;color:#c9a84c;}
+  .ah-dek{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:400;font-style:italic;color:rgba(255,255,255,.78);line-height:1.6;}
+  .ah-meta{margin-top:1.5rem;display:flex;gap:1.5rem;font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+  .ab{max-width:780px;margin:0 auto;padding:3.5rem 2rem 5rem;}
+  .ab p{font-family:"Source Serif 4",Georgia,serif;font-size:1.05rem;line-height:1.85;color:var(--ink-soft);margin-bottom:1.5rem;font-weight:300;}
+  .ab h2{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin:2.8rem 0 1rem;line-height:1.2;}
+  .ab h3{font-family:"Playfair Display",serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin:2rem 0 .7rem;}
+  .ab h4{font-family:"DM Sans",sans-serif;font-size:.95rem;font-weight:600;color:var(--sky-deep);margin:1.5rem 0 .5rem;letter-spacing:.02em;}
+  .ab ul,.ab ol{margin:1rem 0 1.5rem 1.5rem;}
+  .ab li{font-family:"Source Serif 4",Georgia,serif;font-size:1rem;line-height:1.75;color:var(--ink-soft);margin-bottom:.4rem;}
+  .ab strong{font-weight:600;color:var(--ink);}
+  .fo{background:var(--sky-mist);border-left:3px solid var(--sky-bright);border-radius:0 8px 8px 0;padding:1.4rem 1.6rem;margin:2rem 0;}
+  .fo-lbl{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sky-bright);margin-bottom:.6rem;}
+  .fo p{font-family:"Playfair Display",serif;font-size:1rem;font-style:italic;color:var(--slate);margin:0;line-height:1.6;}
+  .pq{border-top:2px solid var(--sky-deep);border-bottom:1px solid var(--rule);padding:1.8rem 0;margin:2.5rem 0;}
+  .pq p{font-family:"Playfair Display",serif;font-size:1.2rem;font-style:italic;color:var(--sky-deep);line-height:1.5;margin:0;}
+  .ab-box{background:rgba(201,125,46,.07);border:1px solid rgba(201,125,46,.25);border-radius:8px;padding:1.4rem 1.6rem;margin:2rem 0;}
+  .ab-lbl{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--horizon);margin-bottom:.5rem;}
+  .ab-box p{font-family:"Source Serif 4",serif;font-size:.95rem;color:var(--slate);margin:0;line-height:1.7;}
+  .rc{background:rgba(10,74,124,.05);border:1px solid rgba(10,74,124,.12);border-radius:8px;padding:1.4rem 1.6rem;margin:2rem 0;}
+  .rc-lbl{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sky-mid);margin-bottom:.5rem;}
+  .rc p{font-family:"Source Serif 4",serif;font-size:.95rem;color:var(--slate);margin:0;line-height:1.7;}
+  .dl{list-style:none;margin:1.5rem 0 2rem;padding:0;}
+  .dl li{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--rule);}
+  .dl li:last-child{border-bottom:none;}
+  .dn{font-family:"IBM Plex Mono",monospace;font-size:.65rem;color:var(--sky-bright);letter-spacing:.1em;flex-shrink:0;padding-top:.3rem;width:24px;}
+  .dc{display:flex;flex-direction:column;gap:.3rem;}
+  .dc strong{font-family:"DM Sans",sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);}
+  .dc span{font-family:"Source Serif 4",serif;font-size:.92rem;color:var(--slate);line-height:1.65;}
+  .sg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0 2rem;}
+  .si{background:var(--cloud);border-radius:10px;padding:1.2rem;display:flex;gap:.8rem;align-items:flex-start;}
+  .si-ic{color:var(--sky-bright);font-size:.8rem;flex-shrink:0;padding-top:.3rem;}
+  .si-ct{display:flex;flex-direction:column;gap:.3rem;}
+  .si-ct strong{font-family:"DM Sans",sans-serif;font-size:.88rem;font-weight:600;color:var(--ink);}
+  .si-ct span{font-size:.82rem;color:var(--slate);line-height:1.6;font-family:"Source Serif 4",serif;}
+  .st{width:100%;border-collapse:collapse;margin:1.5rem 0 2rem;font-size:.88rem;}
+  .st th{background:var(--sky-deep);color:var(--white);padding:.8rem 1rem;text-align:left;font-family:"DM Sans",sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.05em;}
+  .st td{padding:.9rem 1rem;border-bottom:1px solid var(--rule);color:var(--slate);font-family:"Source Serif 4",serif;line-height:1.55;vertical-align:top;}
+  .st tr:last-child td{border-bottom:none;}
+  .st tr:hover td{background:var(--sky-mist);}
+  .bdg{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;padding:.2rem .5rem;border-radius:100px;}
+  .bdg-h{background:rgba(192,57,43,.1);color:#c0392b;border:1px solid rgba(192,57,43,.2);}
+  .bdg-m{background:rgba(241,196,15,.1);color:#c87a00;border:1px solid rgba(241,196,15,.25);}
+  .pg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0 2rem;}
+  .pc{border-radius:10px;padding:1.3rem;}
+  .pc.high{background:rgba(192,57,43,.06);border:1px solid rgba(192,57,43,.18);}
+  .pc.watch{background:rgba(241,196,15,.07);border:1px solid rgba(241,196,15,.2);}
+  .pc.monitor{background:rgba(10,74,124,.05);border:1px solid rgba(10,74,124,.12);}
+  .pc.maintain{background:rgba(39,174,96,.06);border:1px solid rgba(39,174,96,.18);}
+  .pl{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem;font-weight:500;}
+  .pc.high .pl{color:#c0392b;}
+  .pc.watch .pl{color:#c87a00;}
+  .pc.monitor .pl{color:var(--sky-mid);}
+  .pc.maintain .pl{color:#1e8449;}
+  .pc p{font-family:"Source Serif 4",serif;font-size:.85rem;color:var(--slate);line-height:1.65;margin:0;}
+  .tl{margin:1.5rem 0 2rem;border-left:2px solid var(--sky-pale);padding-left:2rem;}
+  .tl-it{margin-bottom:2rem;position:relative;}
+  .tl-it::before{content:"";position:absolute;left:-2.45rem;top:.35rem;width:10px;height:10px;border-radius:50%;background:var(--sky-bright);border:2px solid var(--white);box-shadow:0 0 0 2px var(--sky-bright);}
+  .tl-ds{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-bright);margin-bottom:.4rem;display:block;}
+  .tl-it h4{font-family:"DM Sans",sans-serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.5rem;}
+  .tl-it p{font-family:"Source Serif 4",serif;font-size:.92rem;color:var(--slate);line-height:1.7;margin-bottom:.8rem;}
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0 2rem;}
+  .do-c{background:rgba(39,174,96,.05);border:1px solid rgba(39,174,96,.2);border-radius:10px;padding:1.4rem;}
+  .dn-c{background:rgba(192,57,43,.05);border:1px solid rgba(192,57,43,.18);border-radius:10px;padding:1.4rem;}
+  .do-c h5{font-family:"DM Sans",sans-serif;font-size:.8rem;font-weight:600;color:#1e8449;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.8rem;}
+  .dn-c h5{font-family:"DM Sans",sans-serif;font-size:.8rem;font-weight:600;color:#c0392b;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.8rem;}
+  .do-c ul,.dn-c ul{margin:0;padding-left:1.2rem;}
+  .do-c li,.dn-c li{font-family:"Source Serif 4",serif;font-size:.88rem;color:var(--slate);margin-bottom:.5rem;line-height:1.55;}
+  .sl{margin:1.5rem 0 2rem;}
+  .sl-it{display:flex;gap:1.5rem;margin-bottom:1.8rem;align-items:flex-start;}
+  .sl-n{font-family:"IBM Plex Mono",monospace;font-size:1.4rem;color:var(--sky-pale);font-weight:400;flex-shrink:0;line-height:1;padding-top:.2rem;width:2.5rem;}
+  .sl-ct h4{font-family:"DM Sans",sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.4rem;}
+  .sl-ct p{font-family:"Source Serif 4",serif;font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;}
+  .art-cta{background:linear-gradient(135deg,var(--sky-deep),#0d5e9e);border-radius:16px;padding:2.5rem;margin:3rem 0 2rem;text-align:center;}
+  .art-cta h3{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:.8rem;}
+  .art-cta p{font-family:"Source Serif 4",serif;font-size:.95rem;color:rgba(255,255,255,.7);margin-bottom:1.5rem;line-height:1.6;}
+  .art-cta-btn{display:inline-block;background:#c9a84c;color:var(--sky-deep);padding:.85rem 2rem;border-radius:6px;font-family:"DM Sans",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:all .3s;}
+  .art-cta-btn:hover{background:#e0be6a;transform:translateY(-2px);}
+  .lfs{background:var(--cloud);border-radius:16px;padding:2.5rem;margin:2rem 0;}
+  .lfs h3{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
+  .lfs>p{font-family:"Source Serif 4",serif;font-size:.92rem;color:var(--slate);margin-bottom:1.5rem;}
+  .lf{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+  .lf .full{grid-column:1/-1;}
+  .lf input,.lf select,.lf textarea{width:100%;background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:.75rem 1rem;font-family:"DM Sans",sans-serif;font-size:.85rem;color:var(--ink);outline:none;transition:border-color .3s;}
+  .lf input:focus,.lf select:focus,.lf textarea:focus{border-color:var(--sky-bright);box-shadow:0 0 0 3px rgba(46,143,212,.1);}
+  .lf input::placeholder,.lf textarea::placeholder{color:var(--steel);}
+  .lf textarea{height:90px;resize:vertical;}
+  .lf-sub{grid-column:1/-1;background:linear-gradient(135deg,var(--sky-deep),var(--sky-mid));color:var(--white);border:none;border-radius:6px;padding:.9rem 2rem;font-family:"DM Sans",sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.05em;cursor:pointer;transition:all .3s;width:100%;}
+  .lf-sub:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,74,124,.25);}
+  .fn{grid-column:1/-1;font-size:.72rem;color:var(--steel);text-align:center;margin-top:.3rem;}
+  .fs{display:none;text-align:center;padding:1.5rem;}
+  .fs p{font-family:"Playfair Display",serif;font-size:1.1rem;color:var(--sky-deep);}
+  .bk{display:inline-flex;align-items:center;gap:.4rem;font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-bright);text-decoration:none;margin-bottom:2.5rem;transition:gap .3s;}
+  .bk:hover{gap:.7rem;}
+  .sf{background:var(--ink);padding:2.5rem 3rem;margin-top:4rem;}
+  .sf-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .sf-nm{font-family:"Playfair Display",serif;font-size:.95rem;font-weight:700;color:var(--white);}
+  .sf-lk{display:flex;gap:1.5rem;list-style:none;}
+  .sf-lk a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.75rem;transition:color .3s;}
+  .sf-lk a:hover{color:rgba(255,255,255,.8);}
+  .sf-cp{font-family:"IBM Plex Mono",monospace;font-size:.58rem;color:rgba(255,255,255,.2);letter-spacing:.06em;}
+  .rs{border-top:1px solid var(--rule);padding-top:2.5rem;margin-top:3rem;}
+  .rs-lbl{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sky-bright);margin-bottom:1.2rem;}
+  .rg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .rc-card{background:var(--cloud);border-radius:10px;padding:1.3rem;text-decoration:none;transition:all .3s;border:1px solid transparent;}
+  .rc-card:hover{border-color:rgba(10,74,124,.15);transform:translateY(-2px);}
+  .rc-cat{font-family:"IBM Plex Mono",monospace;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sky-bright);margin-bottom:.4rem;}
+  .rc-ttl{font-family:"Playfair Display",serif;font-size:.95rem;font-weight:600;color:var(--ink);line-height:1.3;}
+  @media(max-width:700px){.snb{padding:1rem 1.2rem;}.snb-links{display:none;}.ab{padding:2.5rem 1.2rem 4rem;}.sg,.pg,.dd,.rg{grid-template-columns:1fr;}.lf{grid-template-columns:1fr;}.lf .full{grid-column:1;}.sf{padding:2rem 1.5rem;}.sf-in{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+<nav class="snb">
+  <a href="https://blue-skyiq.com" class="snb-logo">
+    <div class="snb-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 17c2-3 5-5 9-5s7 2 9 5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><path d="M5 13c2-4 4-7 7-7s5 3 7 7" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 9.5C9.5 7 11 5 12 5s2.5 2 4 4.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    <span class="snb-name">Blue Sky Analytics</span>
+  </a>
+  <ul class="snb-links">
+    <li><a href="https://blue-skyiq.com/#approach">Approach</a></li>
+    <li><a href="https://blue-skyiq.com/#platform">Platform</a></li>
+    <li><a href="https://blue-skyiq.com/#services">Services</a></li>
+    <li><a href="https://blue-skyiq.com/insights">Insights</a></li>
+  </ul>
+  <a href="https://blue-skyiq.com/#contact" class="snb-cta">Request Briefing</a>
+</nav>
+<section class="ah">
+  <div class="ah-in">
+    <div class="ah-cat">Multi-Location Risk Strategy</div>
+    <h1>Labor Relations Risk Assessment<br><em>for Multi-Location Employers</em></h1>
+    <p class="ah-dek">A petition at one facility affects every facility you operate. Multi-location employers need a risk assessment methodology built for the complexity of a distributed footprint — not a single-site framework applied at scale.</p>
+    <div class="ah-meta"><span>Blue Sky Analytics</span><span>9 min read</span></div>
+  </div>
+</section>
+<div class="ab">
+  <a href="https://blue-skyiq.com/insights" class="bk">← Back to Insights</a>
+  <article class="ab">
+
+    <p>When a union files a petition at one facility in a multi-location operation, the question leadership needs to answer is not only how to respond to that petition. It is: which of our other locations are next?</p>
+
+    <p>Union organizing campaigns are not isolated events. They follow patterns, geographic, demographic, and operational, and a successful campaign at one facility in a multi-unit enterprise frequently serves as a proof of concept for activity at adjacent locations. Organizers understand this. Most multi-location employers do not respond to it until the second petition arrives.</p>
+
+    <p>A labor relations risk assessment designed for multi-location employers addresses a fundamentally different problem than a single-facility vulnerability review. It requires a methodology that can produce comparable, prioritized risk intelligence across an entire operational footprint, and translate that intelligence into deployment decisions that protect the enterprise, not just the facility already under pressure.</p>
+
+    <div class="fo">
+      <div class="fo-lbl">Field Observation</div>
+      <p>"The petition you know about is not always the location you should be most worried about. We have seen organizing activity at a secondary facility accelerate rapidly after a primary location became public, because the organizers already had relationships there, and the filing at the first location told the workforce at the second that success was possible."</p>
+    </div>
+
+    <h2>Why Single-Site Thinking Fails at Scale</h2>
+
+    <p>The default approach to labor relations risk at multi-location employers is reactive and sequential. A problem surfaces at one facility. Resources are deployed to that facility. The problem is addressed, or not, and the organization returns to its baseline posture until the next incident surface.</p>
+
+    <p>This approach has two compounding failures. The first is that it treats each facility's labor relations posture as independent, when in practice they are connected. Employees at Location B know when something significant happens at Location A. The organizing community in a given industry or geography knows it too. Petition filings are public. Election results are public. A company that loses an election at one facility has provided the organizers targeting its other facilities with a significant recruiting tool.</p>
+
+    <p>The second failure is resource allocation. An organization that deploys its labor relations resources reactively, only to facilities where active organizing is already visible, is always operating in the most expensive and least effective part of the timeline. The cost of responding to an active petition is substantially higher than the cost of identifying and addressing vulnerability before organizing begins. And the probability of a favorable outcome declines significantly once a petition is filed.</p>
+
+    <p>A multi-location risk assessment changes the economics by making proactive resource deployment possible. When leadership knows which facilities are most vulnerable, resources can be directed to the places where early intervention is most likely to matter, before the petition, not after.</p>
+
+    <h2>The Components of a Multi-Location Assessment</h2>
+
+    <p>A labor relations risk assessment across a distributed operation needs to produce two outputs: a facility-by-facility risk profile, and a prioritized deployment map that translates those profiles into action sequencing.</p>
+
+    <p>The facility risk profile requires measurement across the same dimensions that drive union vulnerability at any single location, management effectiveness, communication quality, pay and benefits perception, safety and conditions, general work experience, and the inferred union sentiment signal, but with a methodology that allows meaningful comparison across sites. A score of 2.8 on management effectiveness at one facility needs to mean the same thing as a 2.8 at another facility for the cross-location analysis to be useful.</p>
+
+    <p>This comparability requirement has implications for survey design. Ad hoc assessments, different instruments at different facilities, conducted at different times by different people with different methodologies, produce data that cannot be aggregated or ranked. The intelligence value of each individual assessment is also reduced, because it lacks the comparative context that makes the findings meaningful.</p>
+
+    <div class="pq">
+      <p>"Knowing that a facility scores low is useful. Knowing that it scores lower than every other facility in your footprint, and that three specific dimensions have declined since the last assessment cycle, tells you where to go next. That is a different level of intelligence entirely."</p>
+    </div>
+
+    <h2>A Framework for Cross-Location Risk Prioritization</h2>
+
+    <p>Once comparable sentiment data exists across multiple facilities, the risk prioritization question becomes: where should resources go first, and how urgently?</p>
+
+    <p>The prioritization framework should account for both the severity of the current risk signal and the operational context that affects how that signal should be interpreted. A facility with moderate sentiment scores in a geography with significant union organizing activity in its industry presents a different risk profile than a facility with the same scores in a geography with minimal organizing presence.</p>
+
+    <div class="pg">
+      <div class="pc high">
+        <div class="pl">Immediate Action</div>
+        <p>Low sentiment scores on management trust and communication dimensions, declining trend from prior assessment, or any intelligence suggesting external organizing contact has occurred.</p>
+      </div>
+      <div class="pc watch">
+        <div class="pl">Active Monitoring</div>
+        <p>Moderate sentiment scores with deteriorating trend, or strong scores in most dimensions but a significant anomaly in one, particularly management effectiveness or pay perception.</p>
+      </div>
+      <div class="pc monitor">
+        <div class="pl">Periodic Assessment</div>
+        <p>Generally adequate scores with stable trend, no significant anomalies, and low external organizing pressure. Standard assessment cycle with no additional intervention required.</p>
+      </div>
+      <div class="pc maintain">
+        <div class="pl">Healthy Posture</div>
+        <p>Strong scores across all dimensions with positive or stable trend. Focus on maintaining conditions rather than intervention. Document practices that are driving positive results for potential cross-location application.</p>
+      </div>
+    </div>
+
+    <h2>The Supervisor Layer Across Multiple Facilities</h2>
+
+    <p>Multi-location assessments reveal a pattern that is almost universal in distributed operations: labor relations risk concentrates at the supervisor level, and supervisor quality varies significantly across facilities even within the same company.</p>
+
+    <p>An organization with twenty facilities will almost always have locations where the workforce's relationship with front-line supervisors is fundamentally different from the norm, better or worse, and those differences drive risk differences that company-level policies cannot explain. The facility with the worst management trust scores almost always has specific supervisors whose teams are driving the aggregate result downward. The facility with the strongest scores almost always has supervisors whose practices could be studied and replicated elsewhere.</p>
+
+    <p>A multi-location risk assessment that cannot identify which supervisors are driving the risk is producing incomplete intelligence. The facility-level score is a starting point, not a conclusion. The department-level and supervisor-level breakdown is where the actionable information lives.</p>
+
+    <h2>Building a Monitoring System, Not a One-Time Assessment</h2>
+
+    <p>A single cross-location assessment produces a baseline. For multi-location employers, the baseline alone is valuable, most operators discover significant variation across their footprint that they did not anticipate. But the ongoing value of a labor relations monitoring system is substantially greater than the value of any single assessment.</p>
+
+    <div class="sl">
+      <div class="sl-it">
+        <div class="sl-n">01</div>
+        <div class="sl-ct">
+          <h4>Baseline Assessment</h4>
+          <p>Deploy consistent methodology across all facilities within a defined window. Establish comparable scores across six dimensions for each location. Identify immediate priorities and initial deployment map.</p>
+        </div>
+      </div>
+      <div class="sl-it">
+        <div class="sl-n">02</div>
+        <div class="sl-ct">
+          <h4>Root Cause Analysis at Priority Locations</h4>
+          <p>At facilities identified as immediate action or active monitoring priorities, conduct structured interviews with both management and employee cross-sections. Identify the specific operational drivers behind the sentiment scores.</p>
+        </div>
+      </div>
+      <div class="sl-it">
+        <div class="sl-n">03</div>
+        <div class="sl-ct">
+          <h4>Targeted Intervention</h4>
+          <p>Deploy resources, management coaching, communication improvements, operational changes, or direct employee relations work, specifically to the conditions identified as risk drivers. Track response metrics.</p>
+        </div>
+      </div>
+      <div class="sl-it">
+        <div class="sl-n">04</div>
+        <div class="sl-ct">
+          <h4>Continuous Monitoring Cycle</h4>
+          <p>Reassess priority facilities at a shorter cycle. Maintain standard cycle for stable facilities. Detect emerging risk early enough to intervene before it reaches the baseline threshold for the locations currently classified as concerns.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>The NLRB Intelligence Layer</h2>
+
+    <p>Sentiment measurement tells an employer what is happening inside its facilities. NLRB petition monitoring tells it what is happening in its industry and geography, and the combination of the two produces a risk picture that neither produces alone.</p>
+
+    <p>Petition filings are public record. Every filing in a given industry, geography, or employer category is visible and searchable. Multi-location employers who monitor NLRB activity systematically can identify when organizing pressure is building in their sector before that pressure reaches any of their specific locations, and can use that intelligence to prioritize which facilities' internal sentiment they should be examining most carefully.</p>
+
+    <p>A facility with moderate sentiment scores in a geography where the relevant union has filed three petitions against competitors in the past six months is a different risk profile than the same score in a geography with no recent activity. The external intelligence contextualizes the internal measurement and sharpens the prioritization.</p>
+
+    <div class="rc">
+      <div class="rc-lbl">Competitive Intelligence Note</div>
+      <p>When a union wins an election at a competitor in your geography, your workforce knows. If your employees are in a similar role, earning similar wages, and facing similar conditions to the workforce that just organized successfully, that outcome functions as a proof of concept. NLRB petition monitoring is not just about your own exposure, it is about managing the narrative that circulates in your industry.</p>
+    </div>
+
+    <h2>What Multi-Location Employers Should Expect to Find</h2>
+
+    <p>Organizations conducting their first cross-location labor relations assessment almost universally encounter the same finding: the variation across their facilities is substantially larger than they expected. Locations that leadership regarded as healthy often have meaningful vulnerabilities below the surface. Locations that were considered concerns sometimes turn out to have stronger workforce relationships than assumed.</p>
+
+    <p>This variation is not a failure of leadership. It is the predictable result of operating a distributed business where local management culture, regional labor market conditions, facility-level history, and supervisor quality interact in ways that are invisible without direct measurement.</p>
+
+    <p>The value of seeing the full picture, across all locations, on comparable dimensions, at a level of granularity that identifies where the risk actually lives, is that it makes deliberate resource allocation possible. The organizations that manage labor relations most effectively across a distributed footprint are not the ones with the most resources. They are the ones who know where to direct the resources they have.</p>
+
+    <div class="art-cta">
+      <h3>See your full risk picture across every location.</h3>
+      <p>Blue Sky Analytics deploys SentimentIQ™ across distributed operations to produce comparable, prioritized risk intelligence, facility by facility, department by department, supervisor by supervisor.</p>
+      <a href="https://blue-skyiq.com/#contact" class="art-cta-btn">Request a Confidential Briefing</a>
+    </div>
+
+  </article>
+  <div class="lfs">
+  <h3>Talk to an Advisor</h3>
+  <p>Tell us about your organization and we will reach out to schedule a confidential briefing.</p>
+  <form class="lf" id="articleForm" action="https://formspree.io/f/xlgkgloz" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="company" placeholder="Company Name" required>
+    <input type="email" name="email" placeholder="Work Email" required class="full">
+    <select name="employee_count" required>
+      <option value="" disabled selected>Number of Employees</option>
+      <option>Under 100</option>
+      <option>100 – 500</option>
+      <option>500 – 1,500</option>
+      <option>1,500 – 5,000</option>
+      <option>5,000+</option>
+    </select>
+    <select name="locations">
+      <option value="" disabled selected>Number of Locations</option>
+      <option>1</option>
+      <option>2 – 5</option>
+      <option>6 – 15</option>
+      <option>15+</option>
+    </select>
+    <textarea name="concern" placeholder="What prompted your inquiry?" class="full"></textarea>
+    <button type="submit" class="lf-sub">Request a Confidential Briefing</button>
+    <p class="fn">All inquiries are confidential. We do not share client information.</p>
+  </form>
+  <div class="fs" id="formSuccess"><p>Thank you — we will be in touch shortly.</p></div>
+</div>
+<script>
+  var af = document.getElementById("articleForm");
+  var fs = document.getElementById("formSuccess");
+  if(af){af.addEventListener("submit",async function(e){e.preventDefault();var d=new FormData(af);var r=await fetch(af.action,{method:"POST",body:d,headers:{"Accept":"application/json"}});if(r.ok){af.style.display="none";fs.style.display="block";}});}
+</script>
+  <div class="rs">
+  <div class="rs-lbl">Related Articles</div>
+  <div class="rg">
+    <a href="https://blue-skyiq.com/insights/employee-sentiment-and-union-risk" class="rc-card">
+      <div class="rc-cat">Workforce Intelligence</div>
+      <div class="rc-ttl">Employee Sentiment and Union Risk</div>
+    </a>
+    <a href="https://blue-skyiq.com/insights/how-to-identify-union-vulnerability" class="rc-card">
+      <div class="rc-cat">Labor Risk Intelligence</div>
+      <div class="rc-ttl">How to Identify Union Vulnerability Before Organizing Starts</div>
+    </a>
+  </div>
+</div>
+</div>
+<footer class="sf">
+  <div class="sf-in">
+    <div class="sf-nm">Blue Sky Analytics</div>
+    <ul class="sf-lk">
+      <li><a href="https://blue-skyiq.com/#approach">Approach</a></li>
+      <li><a href="https://blue-skyiq.com/#platform">Platform</a></li>
+      <li><a href="https://blue-skyiq.com/#services">Services</a></li>
+      <li><a href="https://blue-skyiq.com/insights">Insights</a></li>
+      <li><a href="https://blue-skyiq.com/#contact">Contact</a></li>
+    </ul>
+    <div class="sf-cp">blue-skyiq.com &nbsp;·&nbsp; Workforce Intelligence &amp; Labor Risk Advisory</div>
+  </div>
+</footer>
+</body>
+</html>
