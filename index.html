@@ -3,1876 +3,810 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Sky Analytics | Workforce Intelligence & Labor Risk Advisory</title>
+<title>Blue Sky Analytics | Workforce Intelligence &amp; Labor Risk Advisory</title>
+<meta name="description" content="Blue Sky Analytics helps leadership teams measure workforce sentiment, identify union vulnerability at its source, and close the gap before a petition is filed. Powered by SentimentIQ™.">
+<link rel="canonical" href="https://blue-skyiq.com/">
+<meta property="og:title" content="Blue Sky Analytics | Workforce Intelligence &amp; Labor Risk Advisory">
+<meta property="og:description" content="Know what your workforce is thinking before a petition tells you. Six-dimension sentiment intelligence, root cause analysis, and a plan to close the gap.">
+<meta property="og:url" content="https://blue-skyiq.com/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --sky-deep:    #0a4a7c;
-    --sky-mid:     #1a6fab;
-    --sky-bright:  #2e8fd4;
-    --sky-pale:    #d6eaf8;
-    --sky-mist:    #eef6fc;
-    --horizon:     #c97d2e;
-    --horizon-dim: rgba(201,125,46,0.12);
-    --slate:       #3a4a5c;
-    --steel:       #6b7f93;
-    --cloud:       #f0f5fa;
-    --white:       #ffffff;
-    --ink:         #0d1a26;
-    --ink-soft:    #2a3a4a;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--white);
-    color: var(--ink);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 900;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.3rem 3.5rem;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(10,74,124,0.08);
-    transition: padding 0.4s ease, box-shadow 0.4s ease;
-  }
-
-  nav.scrolled {
-    padding: 0.9rem 3.5rem;
-    box-shadow: 0 4px 32px rgba(10,74,124,0.08);
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-  }
-
-  .nav-logo-mark {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--sky-deep) 0%, var(--sky-bright) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .nav-logo-mark svg { width: 18px; height: 18px; }
-
-  .nav-logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-
-  .nav-logo-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--sky-deep);
-    letter-spacing: 0.02em;
-  }
-
-  .nav-logo-sub {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.52rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--steel);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--slate);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover { color: var(--sky-deep); }
-
-  .nav-cta {
-    background: var(--sky-deep);
-    color: var(--white);
-    padding: 0.6rem 1.5rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .nav-cta:hover {
-    background: var(--sky-mid);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(10,74,124,0.25);
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 9rem 3.5rem 5rem;
-    position: relative;
-    overflow: hidden;
-    background: var(--white);
-  }
-
-  /* Sky gradient atmosphere */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 65%;
-    height: 100%;
-    background:
-      radial-gradient(ellipse 80% 70% at 70% 40%, rgba(46,143,212,0.1) 0%, transparent 65%),
-      radial-gradient(ellipse 50% 50% at 90% 10%, rgba(10,74,124,0.06) 0%, transparent 60%),
-      linear-gradient(180deg, rgba(214,234,248,0.4) 0%, rgba(240,245,250,0.1) 100%);
-    pointer-events: none;
-  }
-
-  /* Geometric sky lines */
-  .hero-lines {
-    position: absolute;
-    top: 0; right: 0;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .hero-lines svg {
-    position: absolute;
-    top: 0; right: 0;
-    width: 100%; height: 100%;
-    opacity: 0.07;
-  }
-
-  .hero-content {
-    position: relative;
-    max-width: 820px;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    background: rgba(10,74,124,0.07);
-    border: 1px solid rgba(10,74,124,0.12);
-    border-radius: 100px;
-    padding: 0.4rem 1rem 0.4rem 0.6rem;
-    margin-bottom: 2.2rem;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.2s forwards;
-  }
-
-  .eyebrow-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--sky-bright);
-    animation: pulse-dot 2s ease infinite;
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
-
-  .eyebrow-text {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.64rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sky-deep);
-  }
-
-  .hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 5.5vw, 5rem);
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--ink);
-    margin-bottom: 1.8rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.4s forwards;
-  }
-
-  .hero-headline em {
-    font-style: italic;
-    color: var(--sky-deep);
-  }
-
-  .hero-headline .accent {
-    position: relative;
-    display: inline-block;
-    color: var(--sky-deep);
-  }
-
-  .hero-headline .accent::after {
-    content: '';
-    position: absolute;
-    bottom: 4px; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--sky-bright), var(--horizon));
-    border-radius: 2px;
-  }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    color: var(--slate);
-    max-width: 540px;
-    line-height: 1.85;
-    margin-bottom: 2.8rem;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.6s forwards;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.8s forwards;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--sky-deep), var(--sky-mid));
-    color: var(--white);
-    padding: 1rem 2.2rem;
-    border-radius: 6px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(10,74,124,0.3);
-    display: inline-block;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(10,74,124,0.4);
-  }
-
-  .btn-outline {
-    color: var(--sky-deep);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 1px solid rgba(10,74,124,0.25);
-    padding-bottom: 2px;
-    transition: all 0.3s;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--sky-deep);
-    gap: 0.8rem;
-  }
-
-  /* Floating stat cards */
-  .hero-float {
-    position: absolute;
-    right: 3.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    opacity: 0;
-    animation: fadeLeft 1s ease 1.1s forwards;
-  }
-
-  .float-card {
-    background: var(--white);
-    border: 1px solid rgba(10,74,124,0.1);
-    border-radius: 12px;
-    padding: 1.2rem 1.6rem;
-    box-shadow: 0 8px 32px rgba(10,74,124,0.08);
-    min-width: 180px;
-  }
-
-  .float-card-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--sky-deep);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-
-  .float-card-label {
-    font-size: 0.72rem;
-    color: var(--steel);
-    letter-spacing: 0.04em;
-    line-height: 1.4;
-  }
-
-  .float-card-bar {
-    height: 3px;
-    border-radius: 2px;
-    margin-top: 0.8rem;
-    background: linear-gradient(90deg, var(--sky-bright), var(--sky-pale));
-  }
-
-  /* ── TRUST BAND ── */
-  .trust-band {
-    background: var(--sky-deep);
-    padding: 2rem 3.5rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    overflow: hidden;
-  }
-
-  .trust-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-
-  .trust-ticker-wrap {
-    flex: 1;
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
-  }
-
-  .trust-ticker {
-    display: flex;
-    gap: 3.5rem;
-    animation: ticker 28s linear infinite;
-    white-space: nowrap;
-  }
-
-  .trust-item {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .trust-item::after {
-    content: '◇';
-    color: rgba(46,143,212,0.6);
-  }
-
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ── SECTIONS ── */
-  section { padding: 7rem 3.5rem; }
-
-  .section-inner { max-width: 1140px; margin: 0 auto; }
-
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--sky-bright);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-  }
-
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 1px;
-    background: var(--sky-bright);
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 400;
-    line-height: 1.15;
-    margin-bottom: 1.4rem;
-    color: var(--ink);
-  }
-
-  .section-title em { font-style: italic; color: var(--sky-deep); }
-
-  .section-body {
-    font-size: 1rem;
-    color: var(--slate);
-    line-height: 1.85;
-    max-width: 580px;
-    font-weight: 300;
-  }
-
-  /* ── PROBLEM SECTION ── */
-  .problem-section { background: var(--cloud); }
-
-  .problem-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 3.5rem;
-  }
-
-  .insight-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 1.8rem;
-    margin-bottom: 1rem;
-    border-left: 3px solid var(--sky-bright);
-    box-shadow: 0 2px 16px rgba(10,74,124,0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .insight-card:hover {
-    transform: translateX(4px);
-    box-shadow: 0 6px 24px rgba(10,74,124,0.1);
-  }
-
-  .insight-card-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sky-bright);
-    margin-bottom: 0.6rem;
-  }
-
-  .insight-card-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    line-height: 1.55;
-    color: var(--ink-soft);
-  }
-
-  /* ── APPROACH ── */
-  .approach-section { background: var(--white); }
-
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 4rem;
-  }
-
-  .step-card {
-    background: var(--cloud);
-    border-radius: 16px;
-    padding: 2.2rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  .step-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
-  }
-
-  .step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(10,74,124,0.1);
-  }
-
-  .step-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--sky-deep), var(--sky-bright));
-  }
-
-  .step-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    color: var(--sky-bright);
-    margin-bottom: 1rem;
-  }
-
-  .step-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background: rgba(10,74,124,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.2rem;
-  }
-
-  .step-icon svg { width: 22px; height: 22px; }
-
-  .step-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-    color: var(--ink);
-  }
-
-  .step-body {
-    font-size: 0.88rem;
-    color: var(--slate);
-    line-height: 1.75;
-  }
-
-  /* ── SENTIMENTIQ ── */
-  .platform-section { background: var(--sky-deep); color: var(--white); }
-
-  .platform-section .section-label { color: var(--sky-pale); }
-  .platform-section .section-label::before { background: var(--sky-pale); }
-  .platform-section .section-title { color: var(--white); }
-  .platform-section .section-title em { color: var(--sky-pale); font-style: italic; }
-  .platform-section .section-body { color: rgba(255,255,255,0.65); }
-
-  .platform-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 5rem;
-    align-items: center;
-    margin-top: 3.5rem;
-  }
-
-  .platform-badges {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  .platform-badge {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 100px;
-    padding: 0.4rem 1rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-  }
-
-  /* Dashboard */
-  .siq-dash {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 16px;
-    padding: 1.8rem;
-    backdrop-filter: blur(10px);
-  }
-
-  .dash-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.6rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .dash-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-  }
-
-  .dash-live {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    color: #5ce65c;
-    letter-spacing: 0.1em;
-  }
-
-  .dash-live::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: #5ce65c;
-    animation: pulse-dot 1.5s infinite;
-  }
-
-  .dim-row {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .dim-label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.7);
-    width: 170px;
-    flex-shrink: 0;
-  }
-
-  .dim-track {
-    flex: 1;
-    height: 5px;
-    background: rgba(255,255,255,0.07);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .dim-fill {
-    height: 100%;
-    border-radius: 3px;
-    transition: width 1.6s cubic-bezier(0.16,1,0.3,1);
-  }
-
-  .dim-val {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    width: 26px;
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  .risk-pill {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.5rem;
-    letter-spacing: 0.1em;
-    padding: 0.2rem 0.5rem;
-    border-radius: 100px;
-    flex-shrink: 0;
-  }
-
-  .r-high { background: rgba(220,53,69,0.2); color: #ff6b7a; border: 1px solid rgba(220,53,69,0.3); }
-  .r-med  { background: rgba(255,193,7,0.15); color: #ffc107; border: 1px solid rgba(255,193,7,0.25); }
-  .r-low  { background: rgba(40,167,69,0.15); color: #5ce65c; border: 1px solid rgba(40,167,69,0.25); }
-
-  .dash-tiles {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
-    margin-top: 1.4rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .dash-tile {
-    background: rgba(255,255,255,0.06);
-    border-radius: 8px;
-    padding: 0.9rem;
-    text-align: center;
-  }
-
-  .dash-tile-n {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  .dash-tile-l {
-    font-size: 0.6rem;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.08em;
-    margin-top: 0.3rem;
-    text-transform: uppercase;
-  }
-
-  /* ── DIMENSIONS ── */
-  .dimensions-section { background: var(--cloud); }
-
-  .dim-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    margin-top: 4rem;
-  }
-
-  .dim-card {
-    background: var(--white);
-    border-radius: 14px;
-    padding: 2rem;
-    border: 1px solid rgba(10,74,124,0.07);
-    transition: all 0.35s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .dim-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(10,74,124,0.1);
-    border-color: rgba(10,74,124,0.15);
-  }
-
-  .dim-card-accent {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--sky-deep), var(--sky-bright));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .dim-card:hover .dim-card-accent { transform: scaleX(1); }
-
-  .dim-card-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    color: var(--sky-bright);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-  }
-
-  .dim-card-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.8rem;
-  }
-
-  .dim-card-body {
-    font-size: 0.85rem;
-    color: var(--slate);
-    line-height: 1.7;
-  }
-
-  .dim-card-tag {
-    margin-top: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.1em;
-    color: var(--sky-bright);
-    text-transform: uppercase;
-  }
-
-  .dim-card-tag.locked { color: rgba(10,74,124,0.3); }
-
-  /* ── SERVICES ── */
-  .services-section { background: var(--white); }
-
-  .services-list { margin-top: 4rem; }
-
-  .service-row {
-    display: grid;
-    grid-template-columns: 3.5rem 1fr 2.5rem;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid rgba(10,74,124,0.07);
-    cursor: default;
-    transition: all 0.3s;
-  }
-
-  .service-row:first-child { border-top: 1px solid rgba(10,74,124,0.07); }
-
-  .service-row:hover { background: var(--sky-mist); padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; border-color: transparent; }
-
-  .service-n {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--steel);
-    letter-spacing: 0.1em;
-  }
-
-  .service-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
-    transition: color 0.3s;
-  }
-
-  .service-row:hover .service-title { color: var(--sky-deep); }
-
-  .service-desc {
-    font-size: 0.85rem;
-    color: var(--slate);
-    line-height: 1.7;
-    max-width: 580px;
-  }
-
-  .service-arr {
-    color: var(--sky-bright);
-    font-size: 1.2rem;
-    transition: transform 0.3s;
-    opacity: 0;
-  }
-
-  .service-row:hover .service-arr {
-    opacity: 1;
-    transform: translateX(4px);
-  }
-
-  /* ── DIFFERENTIATOR ── */
-  .diff-section { background: var(--cloud); }
-
-  .diff-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 5rem;
-    align-items: center;
-    margin-top: 4rem;
-  }
-
-  .comp-table {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 40px rgba(10,74,124,0.08);
-  }
-
-  .comp-thead {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background: var(--sky-deep);
-  }
-
-  .comp-th {
-    padding: 1rem 1.2rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-  }
-
-  .comp-th.hl { color: var(--white); }
-
-  .comp-tr {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border-bottom: 1px solid rgba(10,74,124,0.05);
-    transition: background 0.2s;
-  }
-
-  .comp-tr:hover { background: var(--sky-mist); }
-  .comp-tr:last-child { border-bottom: none; }
-
-  .comp-td {
-    padding: 0.9rem 1.2rem;
-    font-size: 0.82rem;
-    color: var(--slate);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .comp-td.feat { color: var(--ink-soft); font-weight: 400; }
-
-  .chk { color: #1e8449; font-weight: 600; }
-  .xmk { color: rgba(10,74,124,0.2); }
-
-  /* ── PULL QUOTE ── */
-  .quote-section {
-    background: linear-gradient(135deg, var(--sky-deep) 0%, #0d5e9e 100%);
-    padding: 6rem 3.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .quote-section::before {
-    content: '"';
-    position: absolute;
-    top: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Playfair Display', serif;
-    font-size: 20rem;
-    color: rgba(255,255,255,0.04);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .quote-inner { max-width: 760px; margin: 0 auto; position: relative; }
-
-  .quote-text {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--white);
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
-  }
-
-  .quote-attr {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-  }
-
-  /* ── PROCESS ── */
-  .process-section { background: var(--white); }
-
-  .process-steps {
-    margin-top: 4.5rem;
-    position: relative;
-    padding-left: 4rem;
-  }
-
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    left: 1.4rem;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--sky-bright), rgba(214,234,248,0));
-  }
-
-  .p-step {
-    display: flex;
-    gap: 2.5rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    opacity: 0;
-    transform: translateX(-16px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .p-step.visible { opacity: 1; transform: translateX(0); }
-
-  .p-step-dot {
-    position: absolute;
-    left: -3.8rem;
-    top: 0.1rem;
-    width: 2.8rem;
-    height: 2.8rem;
-    border-radius: 50%;
-    background: var(--white);
-    border: 2px solid var(--sky-bright);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    flex-shrink: 0;
-  }
-
-  .p-step-dot-n {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--sky-deep);
-  }
-
-  .p-step-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-  }
-
-  .p-step-desc {
-    font-size: 0.88rem;
-    color: var(--slate);
-    line-height: 1.8;
-    max-width: 580px;
-  }
-
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--sky-mist);
-    border-top: 1px solid rgba(10,74,124,0.08);
-    padding: 8rem 3.5rem;
-    text-align: center;
-  }
-
-  .cta-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(10,74,124,0.07);
-    border: 1px solid rgba(10,74,124,0.1);
-    border-radius: 100px;
-    padding: 0.35rem 0.9rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sky-deep);
-    margin-bottom: 1.5rem;
-  }
-
-  .cta-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-    font-weight: 400;
-    line-height: 1.12;
-    color: var(--ink);
-    max-width: 680px;
-    margin: 0 auto 1.2rem;
-  }
-
-  .cta-title em { font-style: italic; color: var(--sky-deep); }
-
-  .cta-sub {
-    font-size: 1rem;
-    color: var(--slate);
-    max-width: 480px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.8;
-  }
-
-  .cta-form {
-    display: flex;
-    max-width: 440px;
-    margin: 0 auto 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(10,74,124,0.15);
-  }
-
-  .cta-input {
-    flex: 1;
-    background: var(--white);
-    border: none;
-    padding: 1rem 1.4rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.88rem;
-    color: var(--ink);
-    outline: none;
-  }
-
-  .cta-input::placeholder { color: var(--steel); }
-
-  .cta-submit {
-    background: linear-gradient(135deg, var(--sky-deep), var(--sky-mid));
-    color: var(--white);
-    border: none;
-    padding: 1rem 1.6rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: all 0.3s;
-    white-space: nowrap;
-  }
-
-  .cta-submit:hover { background: linear-gradient(135deg, var(--sky-mid), var(--sky-bright)); }
-
-  .cta-note {
-    font-size: 0.72rem;
-    color: var(--steel);
-    letter-spacing: 0.04em;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    padding: 3rem 3.5rem;
-  }
-
-  .footer-inner {
-    max-width: 1140px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-logo-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
-  }
-
-  .footer-logo-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.5rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-    margin-top: 0.15rem;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    transition: color 0.3s;
-  }
-
-  .footer-links a:hover { color: rgba(255,255,255,0.8); }
-
-  .footer-right {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.06em;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeLeft {
-    from { opacity: 0; transform: translateX(18px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-
-  /* ── HAMBURGER ── */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-    background: none;
-    border: none;
-    z-index: 1001;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--sky-deep);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    transform-origin: center;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: blur(20px);
-    z-index: 1000;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--ink);
-    text-decoration: none;
-    padding: 1rem 2rem;
-    letter-spacing: 0.02em;
-    transition: color 0.3s;
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgba(10,74,124,0.06);
-  }
-  .mobile-menu a:hover { color: var(--sky-deep); }
-  .mobile-menu a.mobile-cta {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    background: var(--sky-deep);
-    color: var(--white);
-    border-radius: 8px;
-    margin: 1.5rem 2rem 0;
-    width: calc(100% - 4rem);
-    padding: 1rem;
-    border-bottom: none;
-    letter-spacing: 0.05em;
-  }
-  .mobile-menu a.mobile-cta:hover { background: var(--sky-mid); }
-
-  /* ── MOBILE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    section { padding: 4.5rem 1.5rem; }
-    .hero { padding: 7.5rem 1.5rem 4rem; }
-    .hero-float { display: none; }
-    .problem-layout,
-    .platform-layout,
-    .diff-layout { grid-template-columns: 1fr; gap: 3rem; }
-    .steps-grid,
-    .dim-grid { grid-template-columns: 1fr 1fr; }
-    .hero-actions { flex-direction: column; align-items: flex-start; }
-    .trust-band { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
-    .cta-form { flex-direction: column; border-radius: 8px; }
-    .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
-  }
-
-  @media (max-width: 600px) {
-    .steps-grid,
-    .dim-grid { grid-template-columns: 1fr; }
-  }
+:root{
+  --sky-deep:#0a4a7c;
+  --sky-mid:#1a6fab;
+  --sky-bright:#2e8fd4;
+  --sky-pale:#e8f2fa;
+  --amber:#c97d2e;
+  --amber-soft:#f6e9d8;
+  --ink:#0f2536;
+  --ink-soft:#41586c;
+  --cloud:#f7fafc;
+  --white:#ffffff;
+  --line:#dde9f2;
+  --night:#071e32;
+  --night-2:#0b2b46;
+  --night-line:#1c4163;
+  --good:#3ba272;
+  --warn:#d9a13b;
+  --risk:#d4593a;
+  --radius:14px;
+  --shadow:0 18px 50px -18px rgba(10,74,124,.22);
+  --ease:cubic-bezier(.22,.8,.26,.99);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--sky-bright);color:#fff}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.12;font-weight:600}
+h1 em,h2 em{font-style:italic;color:var(--sky-mid)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sky-mid);display:inline-flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--amber)}
+section{position:relative}
+
+/* ---------- progress bar ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--sky-bright),var(--amber));z-index:1001;transition:width .12s linear}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:all .35s var(--ease)}
+nav.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;line-height:1.15}
+.brand b{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--sky-deep)}
+.brand span{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--ink-soft);position:relative;padding:4px 0;transition:color .2s}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--amber);transition:width .25s var(--ease)}
+.nav-links a:not(.btn):hover{color:var(--sky-deep)}
+.nav-links a:not(.btn):hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:13px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+.btn-primary{background:var(--sky-deep);color:#fff;box-shadow:0 10px 24px -10px rgba(10,74,124,.55)}
+.btn-primary:hover{background:var(--sky-mid);transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(10,74,124,.55)}
+.btn-amber{background:var(--amber);color:#fff;box-shadow:0 10px 24px -10px rgba(201,125,46,.6)}
+.btn-amber:hover{transform:translateY(-2px)}
+.btn-ghost{color:var(--sky-deep);font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost .arr{transition:transform .25s var(--ease)}
+.btn-ghost:hover .arr{transform:translateX(5px)}
+.hamburger{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px;flex-direction:column;justify-content:center;gap:6px;align-items:center}
+.hamburger span{width:24px;height:2px;background:var(--sky-deep);transition:all .3s var(--ease)}
+.mobile-menu{display:none}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 60px;background:
+  radial-gradient(1100px 600px at 85% -10%,rgba(46,143,212,.14),transparent 60%),
+  radial-gradient(800px 500px at -10% 60%,rgba(201,125,46,.07),transparent 55%),
+  linear-gradient(180deg,#fdfeff 0%,var(--cloud) 100%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(10,74,124,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(10,74,124,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(900px 600px at 70% 20%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(900px 600px at 70% 20%,#000 30%,transparent 75%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.2vw,4.15rem);margin:22px 0 24px;color:var(--ink)}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:block}
+html.js .hero h1 .line span{transform:translateY(110%);animation:rise .9s var(--ease) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) span{animation-delay:.24s}
+@keyframes rise{to{transform:translateY(0)}}
+.hero p.lead{font-size:1.13rem;color:var(--ink-soft);max-width:560px;margin-bottom:34px}
+.hero-ctas{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hero-note{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+.hero-note .dot{width:7px;height:7px;border-radius:50%;background:var(--good);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(59,162,114,.45)}55%{box-shadow:0 0 0 8px rgba(59,162,114,0)}}
+
+/* hero signal card */
+.signal-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transform:rotate(.6deg)}
+.signal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfdfe)}
+.signal-head b{font-size:.8rem;font-weight:600;color:var(--sky-deep)}
+.tag-live{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;color:var(--risk);display:flex;align-items:center;gap:6px}
+.tag-live i{width:6px;height:6px;border-radius:50%;background:var(--risk);animation:pulse 1.8s infinite}
+.signal-body{padding:20px}
+.sig-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.85rem}
+.sig-row:last-child{border:0}
+.sig-row .lbl{color:var(--ink-soft)}
+.sig-row .val{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.78rem}
+.v-risk{color:var(--risk)}.v-warn{color:var(--warn)}.v-good{color:var(--good)}
+.sig-foot{padding:14px 20px;background:var(--sky-pale);font-size:.78rem;color:var(--sky-deep);display:flex;align-items:center;gap:8px}
+.sig-foot b{font-weight:700}
+
+/* hero stats */
+.stat-band{margin-top:74px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--white);padding:30px 30px 26px;transition:background .3s}
+.stat:hover{background:var(--cloud)}
+.stat .num{font-family:'Playfair Display',serif;font-size:2.7rem;font-weight:700;color:var(--sky-deep);line-height:1}
+.stat .num sup{font-size:1.2rem;color:var(--amber)}
+.stat p{font-size:.85rem;color:var(--ink-soft);margin-top:10px;line-height:1.5}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--sky-deep);color:#cfe6f7;overflow:hidden;padding:13px 0;white-space:nowrap;position:relative}
+.ticker-track{display:inline-flex;gap:0;animation:scroll 36s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;padding:0 30px;position:relative}
+.ticker span::after{content:"◆";position:absolute;right:-7px;color:var(--amber);font-size:.55rem;top:2px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- generic section spacing ---------- */
+.sec{padding:110px 0}
+.sec-head{max-width:720px;margin-bottom:60px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem);margin-top:20px;color:var(--ink)}
+.sec-head p{margin-top:18px;color:var(--ink-soft);font-size:1.05rem}
+
+/* reveal on scroll */
+.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.pre:not(.in){opacity:0;transform:translateY(30px)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* ---------- problem ---------- */
+.problem{background:var(--white)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.problem-copy p{color:var(--ink-soft);margin-bottom:20px;font-size:1.03rem}
+.problem-copy p b{color:var(--ink)}
+.obs-stack{display:flex;flex-direction:column;gap:18px}
+.obs{background:var(--cloud);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:24px 26px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.obs:hover{transform:translateX(6px);box-shadow:var(--shadow)}
+.obs .mono{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.obs p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.06rem;color:var(--ink);margin-top:10px;line-height:1.5}
+
+/* ---------- console (signature dark section) ---------- */
+.console{background:var(--night);color:#dcebf7;padding:120px 0}
+.console::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(46,143,212,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(46,143,212,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(1000px 700px at 50% 30%,#000 20%,transparent 80%);-webkit-mask-image:radial-gradient(1000px 700px at 50% 30%,#000 20%,transparent 80%);pointer-events:none}
+.console .kicker{color:var(--sky-bright)}
+.console h2{color:#fff}
+.console h2 em{color:var(--sky-bright)}
+.console .sec-head p{color:#9dbdd6}
+.console-grid{display:grid;grid-template-columns:1.5fr .85fr;gap:34px;align-items:start;position:relative}
+.dash{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--radius);overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.6)}
+.dash-top{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--night-line)}
+.dash-top b{font-size:.85rem;color:#fff;font-weight:600}
+.dash-tabs{display:flex;gap:8px;padding:14px 22px;border-bottom:1px solid var(--night-line);flex-wrap:wrap}
+.dtab{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1px solid var(--night-line);background:transparent;color:#8fb3cd;cursor:pointer;transition:all .25s var(--ease)}
+.dtab:hover{border-color:var(--sky-bright);color:#fff}
+.dtab.active{background:var(--sky-bright);border-color:var(--sky-bright);color:#06202f;font-weight:600}
+.dash-body{padding:24px 22px 10px}
+.dim{margin-bottom:20px}
+.dim-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.dim-top .name{font-size:.86rem;color:#cfe3f3}
+.dim-top .score{font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600}
+.bar{height:9px;background:#0e2740;border-radius:99px;overflow:hidden;position:relative}
+.bar i{display:block;height:100%;width:0;border-radius:99px;transition:width 1s var(--ease)}
+.b-risk i{background:linear-gradient(90deg,#a33b22,var(--risk))}
+.b-warn i{background:linear-gradient(90deg,#a87420,var(--warn))}
+.b-good i{background:linear-gradient(90deg,#27795a,var(--good))}
+.dim.locked .bar i{background:repeating-linear-gradient(45deg,#27506f,#27506f 6px,#1a3b56 6px,#1a3b56 12px);width:100%!important;filter:blur(1px)}
+.dim.locked .name,.dim.locked .score{filter:blur(4px);user-select:none}
+.dim.locked{position:relative}
+.lock-overlay{position:absolute;inset:-6px -10px;display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(7,30,50,.55);backdrop-filter:blur(2px);border:1px dashed var(--night-line);border-radius:10px;padding:10px 16px}
+.lock-overlay .lk{display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--warn)}
+.lock-overlay a{font-size:.74rem;font-weight:600;color:var(--sky-bright);white-space:nowrap}
+.lock-overlay a:hover{text-decoration:underline}
+.dash-foot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--night-line)}
+.dash-foot .cell{padding:18px 22px;border-right:1px solid var(--night-line)}
+.dash-foot .cell:last-child{border:0}
+.dash-foot .n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:#fff}
+.dash-foot .l{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#7fa6c2;margin-top:4px}
+.console-side{display:flex;flex-direction:column;gap:18px}
+.side-card{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--radius);padding:24px}
+.side-card h3{font-size:1.05rem;color:#fff;margin-bottom:10px}
+.side-card p{font-size:.88rem;color:#9dbdd6;line-height:1.6}
+.side-card .mono-l{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:12px}
+.side-cta{background:linear-gradient(135deg,var(--sky-deep),var(--sky-mid));border:0}
+.side-cta p{color:#d8ecfb}
+.side-cta .btn{margin-top:16px;background:#fff;color:var(--sky-deep)}
+
+/* ---------- dimensions grid ---------- */
+.dims{background:var(--cloud)}
+.dims-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.dim-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.dim-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky-bright),transparent);opacity:0;transition:opacity .35s}
+.dim-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#c8ddee}
+.dim-card:hover::before{opacity:1}
+.dim-card .idx{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.2em;color:var(--sky-mid);text-transform:uppercase}
+.dim-card h3{font-size:1.2rem;margin:14px 0 12px}
+.dim-card p{font-size:.9rem;color:var(--ink-soft)}
+.dim-flag{margin-top:16px;display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:var(--amber);background:var(--amber-soft);padding:6px 12px;border-radius:99px}
+.dim-card.protected{background:linear-gradient(160deg,#0d3050,var(--night-2));border-color:var(--night-line);color:#dcebf7}
+.dim-card.protected h3{color:#fff}
+.dim-card.protected p{color:#a9c8de}
+.dim-card.protected .idx{color:var(--sky-bright)}
+.dim-card.protected .dim-flag{background:rgba(217,161,59,.14);color:var(--warn)}
+
+/* ---------- services ---------- */
+.svc-list{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:80px 1fr 2fr 40px;gap:30px;align-items:center;padding:34px 10px;border-bottom:1px solid var(--line);transition:background .3s,padding-left .3s var(--ease);cursor:default}
+.svc:hover{background:var(--cloud);padding-left:22px}
+.svc .no{font-family:'IBM Plex Mono',monospace;color:var(--sky-mid);font-size:.8rem;font-weight:600}
+.svc h3{font-size:1.25rem}
+.svc p{font-size:.92rem;color:var(--ink-soft)}
+.svc .go{font-size:1.3rem;color:var(--amber);opacity:0;transform:translateX(-8px);transition:all .3s var(--ease)}
+.svc:hover .go{opacity:1;transform:none}
+
+/* ---------- compare ---------- */
+.compare{background:var(--cloud)}
+.cmp-table{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.cmp-row{display:grid;grid-template-columns:1.6fr 1fr 1fr;border-bottom:1px solid var(--line)}
+.cmp-row:last-child{border:0}
+.cmp-row>div{padding:18px 26px;font-size:.92rem;display:flex;align-items:center}
+.cmp-row.head>div{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);background:var(--cloud)}
+.cmp-row.head .us{background:var(--sky-deep);color:#fff}
+.cmp-row .us{background:var(--sky-pale);font-weight:600;color:var(--sky-deep)}
+.cmp-no{color:#b6c5d1}
+.cmp-yes::before{content:"✓";margin-right:9px;color:var(--good);font-weight:700}
+
+/* ---------- fit / qualification ---------- */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.fit-card{border-radius:var(--radius);padding:38px 36px;border:1px solid var(--line)}
+.fit-card.yes{background:var(--white);box-shadow:var(--shadow)}
+.fit-card.no{background:transparent}
+.fit-card h3{font-size:1.35rem;margin-bottom:22px}
+.fit-card ul{list-style:none}
+.fit-card li{padding:11px 0 11px 32px;position:relative;font-size:.95rem;color:var(--ink-soft);border-bottom:1px dashed var(--line)}
+.fit-card li:last-child{border:0}
+.fit-card.yes li::before{content:"✓";position:absolute;left:0;color:var(--good);font-weight:700}
+.fit-card.no li::before{content:"✕";position:absolute;left:0;color:#c2cfda;font-weight:700}
+.fit-card.no li{color:#7a8c9b}
+
+/* ---------- process timeline ---------- */
+.proc{counter-reset:step}
+.timeline{position:relative;margin-top:20px}
+.timeline::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.timeline .draw{position:absolute;left:27px;top:10px;width:2px;height:0;background:linear-gradient(180deg,var(--sky-bright),var(--amber));transition:height .2s linear}
+.tstep{position:relative;padding:0 0 46px 86px}
+.tstep:last-child{padding-bottom:0}
+.tstep .node{position:absolute;left:8px;top:0;width:40px;height:40px;border-radius:50%;background:var(--white);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:.8rem;font-weight:600;color:var(--sky-mid);transition:all .4s var(--ease)}
+.tstep.in .node{border-color:var(--sky-bright);background:var(--sky-pale);transform:scale(1.06)}
+.tstep h3{font-size:1.3rem;margin-bottom:10px}
+.tstep p{color:var(--ink-soft);max-width:640px;font-size:.97rem}
+.tstep .meta{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;display:block}
+
+/* ---------- quote band ---------- */
+.quote{background:linear-gradient(135deg,var(--sky-deep) 0%,var(--night-2) 100%);color:#fff;padding:100px 0;text-align:center}
+.quote blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.4rem,2.8vw,2.1rem);max-width:880px;margin:0 auto;line-height:1.45}
+.quote cite{display:block;margin-top:28px;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#9cc4e0}
+
+/* ---------- contact ---------- */
+.contact{background:var(--cloud)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
+.next-steps{margin-top:34px;display:flex;flex-direction:column;gap:0;border-left:2px solid var(--line)}
+.nstep{padding:16px 0 16px 26px;position:relative}
+.nstep::before{content:"";position:absolute;left:-6px;top:24px;width:10px;height:10px;border-radius:50%;background:var(--amber)}
+.nstep b{display:block;font-size:.95rem;color:var(--ink)}
+.nstep span{font-size:.85rem;color:var(--ink-soft)}
+.form-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:42px}
+.form-card .mono{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.form-card h3{font-size:1.5rem;margin:12px 0 26px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-group{margin-bottom:16px}
+.f-group label{display:block;font-size:.78rem;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
+.f-group input,.f-group select,.f-group textarea{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.92rem;color:var(--ink);background:var(--cloud);transition:border-color .25s,box-shadow .25s,background .25s}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{outline:none;border-color:var(--sky-bright);background:#fff;box-shadow:0 0 0 4px rgba(46,143,212,.12)}
+.form-card .btn{width:100%;justify-content:center;padding:16px;font-size:.98rem}
+.form-trust{margin-top:18px;text-align:center;font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;justify-content:center;gap:8px}
+
+/* ---------- footer ---------- */
+footer{background:var(--night);color:#8fb3cd;padding:60px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+footer .brand b{color:#fff}
+footer .brand span{color:#6f93af}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap}
+.foot-links a{font-size:.85rem;color:#9dbdd6;transition:color .2s}
+.foot-links a:hover{color:#fff}
+.foot-base{margin-top:44px;padding-top:24px;border-top:1px solid var(--night-line);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:#5d7f9b;flex-wrap:wrap;gap:10px}
+
+/* ---------- floating CTA ---------- */
+.float-cta{position:fixed;bottom:26px;right:26px;z-index:999;transform:translateY(120px);opacity:0;transition:all .5s var(--ease)}
+.float-cta.show{transform:none;opacity:1}
+.float-cta .btn{box-shadow:0 18px 40px -12px rgba(201,125,46,.65)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:46px}
+  .signal-card{max-width:520px;transform:none}
+  .console-grid{grid-template-columns:1fr}
+  .dims-grid{grid-template-columns:1fr 1fr}
+  .problem-grid,.contact-grid,.fit-grid{grid-template-columns:1fr;gap:44px}
+  .svc{grid-template-columns:50px 1fr;grid-template-rows:auto auto}
+  .svc p{grid-column:2}
+  .svc .go{display:none}
+}
+@media(max-width:720px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .mobile-menu{display:block;position:fixed;top:0;right:-100%;width:78%;max-width:340px;height:100vh;background:var(--white);z-index:1002;padding:90px 36px;box-shadow:-20px 0 60px rgba(10,37,54,.18);transition:right .4s var(--ease)}
+  .mobile-menu.open{right:0}
+  .mobile-menu a{display:block;padding:16px 0;font-size:1.05rem;font-weight:500;border-bottom:1px solid var(--line);color:var(--ink)}
+  .mobile-menu .btn{margin-top:24px;justify-content:center;width:100%}
+  .menu-close{position:absolute;top:22px;right:22px;background:none;border:0;font-size:1.6rem;color:var(--ink-soft);cursor:pointer}
+  .stat-band,.dims-grid{grid-template-columns:1fr}
+  .cmp-row{grid-template-columns:1.4fr 1fr 1fr}
+  .cmp-row>div{padding:13px 14px;font-size:.78rem}
+  .sec{padding:80px 0}
+  .form-card{padding:30px 24px}
+  .f-row{grid-template-columns:1fr}
+  .dash-foot{grid-template-columns:1fr 1fr 1fr}
+  .dash-foot .cell{padding:14px 12px}
+  .float-cta{bottom:18px;right:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+  .hero h1 .line span{transform:none;animation:none}
+}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <div class="nav-logo">
-    <div class="nav-logo-mark">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 17c2-3 5-5 9-5s7 2 9 5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M5 13c2-4 4-7 7-7s5 3 7 7" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M8 9.5C9.5 7 11 5 12 5s2.5 2 4 4.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><b>Blue Sky Analytics</b><span>Workforce Intelligence · Labor Risk Advisory</span></a>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="/sentimentiq">SentimentIQ™</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="/insights">Insights</a>
+      <a href="#contact" class="btn btn-primary">Request Briefing</a>
     </div>
-    <div class="nav-logo-text">
-      <div class="nav-logo-name">Blue Sky Analytics</div>
-      <div class="nav-logo-sub">Workforce Intelligence &nbsp;·&nbsp; Labor Risk Advisory</div>
-    </div>
+    <button class="hamburger" id="hamBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-  <ul class="nav-links">
-    <li><a href="#approach">Approach</a></li>
-    <li><a href="/sentimentiq">SentimentIQ™</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="/insights">Insights</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Request Briefing</a>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#approach" class="mobile-link">Approach</a>
-  <a href="/sentimentiq" class="mobile-link">SentimentIQ™</a>
-  <a href="#services" class="mobile-link">Services</a>
-  <a href="#process" class="mobile-link">Process</a>
-  <a href="/insights" class="mobile-link">Insights</a>
-  <a href="#contact" class="mobile-cta">Request Briefing</a>
+  <button class="menu-close" id="menuClose" aria-label="Close menu">✕</button>
+  <a href="#approach">Approach</a>
+  <a href="/sentimentiq">SentimentIQ™</a>
+  <a href="#services">Services</a>
+  <a href="#process">Process</a>
+  <a href="/insights">Insights</a>
+  <a href="#contact" class="btn btn-primary">Request Briefing</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-lines">
-    <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <path d="M0 800 C100 600 300 500 600 200" stroke="#0a4a7c" stroke-width="1" fill="none"/>
-      <path d="M0 700 C150 550 350 400 600 100" stroke="#0a4a7c" stroke-width="1" fill="none"/>
-      <path d="M0 600 C200 480 400 350 600 50" stroke="#2e8fd4" stroke-width="0.5" fill="none"/>
-      <path d="M100 800 C250 620 400 480 600 300" stroke="#0a4a7c" stroke-width="0.7" fill="none"/>
-      <circle cx="480" cy="160" r="120" stroke="#2e8fd4" stroke-width="0.5" fill="none"/>
-      <circle cx="480" cy="160" r="80" stroke="#0a4a7c" stroke-width="0.5" fill="none"/>
-      <circle cx="480" cy="160" r="40" stroke="#2e8fd4" stroke-width="0.7" fill="none"/>
-    </svg>
-  </div>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker">Workforce Intelligence · Labor Risk Advisory</span>
+        <h1>
+          <span class="line"><span>Your employees have</span></span>
+          <span class="line"><span>already made up</span></span>
+          <span class="line"><span><em>their minds.</em></span></span>
+        </h1>
+        <p class="lead">Most organizations discover a labor problem the day a petition arrives. By then the outcome is nearly decided. We help leadership see what the workforce is thinking before that moment, and more importantly, why.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Request a Confidential Briefing</a>
+          <a href="#approach" class="btn-ghost">See how it works <span class="arr">→</span></a>
+        </div>
+        <div class="hero-note"><span class="dot"></span> Confidential. No obligation. 30 minutes.</div>
+      </div>
+      <aside class="signal-card rv">
+        <div class="signal-head"><b>Workforce Signal Monitor</b><span class="tag-live"><i></i>ACTIVE</span></div>
+        <div class="signal-body">
+          <div class="sig-row"><span class="lbl">Avg. organizing activity before petition</span><span class="val v-risk">9–14 months</span></div>
+          <div class="sig-row"><span class="lbl">Campaigns with no visible warning signs</span><span class="val v-warn">74%</span></div>
+          <div class="sig-row"><span class="lbl">Avg. cost of a contested NLRB election</span><span class="val v-risk">$1.2M+</span></div>
+          <div class="sig-row"><span class="lbl">Window where root causes are still fixable</span><span class="val v-good">OPEN</span></div>
+        </div>
+        <div class="sig-foot">⬡ <span>The signals are always there. <b>The question is whether anyone is measuring them.</b></span></div>
+      </aside>
+    </div>
 
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <div class="eyebrow-dot"></div>
-      <div class="eyebrow-text">Workforce Intelligence &nbsp;·&nbsp; Labor Risk Advisory</div>
-    </div>
-    <h1 class="hero-headline">
-      Your employees have<br>
-      already made up<br>
-      their <span class="accent">minds.</span>
-    </h1>
-    <p class="hero-sub">
-      Most organizations don't discover a labor problem until a petition lands on their desk.
-      By then, the outcome is nearly decided. Blue Sky Analytics helps leadership understand
-      what their workforce is thinking before that moment arrives — and more importantly, why.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Request a Confidential Briefing</a>
-      <a href="#approach" class="btn-outline">See Our Approach →</a>
-    </div>
-  </div>
-
-  <div class="hero-float">
-    <div class="float-card">
-      <div class="float-card-num">74%</div>
-      <div class="float-card-label">of organizing campaigns show no visible warning signs 12 months prior</div>
-      <div class="float-card-bar"></div>
-    </div>
-    <div class="float-card">
-      <div class="float-card-num">$1.2M</div>
-      <div class="float-card-label">avg cost of a contested NLRB election</div>
-      <div class="float-card-bar"></div>
-    </div>
-    <div class="float-card">
-      <div class="float-card-num">6</div>
-      <div class="float-card-label">workforce dimensions measured by SentimentIQ™</div>
-      <div class="float-card-bar"></div>
+    <div class="stat-band rv">
+      <div class="stat"><div class="num"><span class="count" data-target="74">0</span><sup>%</sup></div><p>of organizing campaigns show no visible warning signs in the 12 months prior</p></div>
+      <div class="stat"><div class="num">$<span class="count" data-target="1.2" data-decimal="1">0</span><sup>M</sup></div><p>average cost of a contested NLRB election, before a single contract is negotiated</p></div>
+      <div class="stat"><div class="num"><span class="count" data-target="6">0</span></div><p>workforce dimensions measured by SentimentIQ™, including one no other platform touches</p></div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- TRUST BAND -->
-<div class="trust-band">
-  <div class="trust-label">What we do</div>
-  <div class="trust-ticker-wrap">
-    <div class="trust-ticker">
-      <span class="trust-item">NLRB Petition Monitoring</span>
-      <span class="trust-item">Root Cause Analysis</span>
-      <span class="trust-item">Workforce Sentiment Assessment</span>
-      <span class="trust-item">SentimentIQ™ Platform</span>
-      <span class="trust-item">Management Training</span>
-      <span class="trust-item">NLRA Compliance</span>
-      <span class="trust-item">Operations-Lens Vulnerability Analysis</span>
-      <span class="trust-item">Direct Persuasion Consulting</span>
-      <span class="trust-item">NLRB Petition Monitoring</span>
-      <span class="trust-item">Root Cause Analysis</span>
-      <span class="trust-item">Workforce Sentiment Assessment</span>
-      <span class="trust-item">SentimentIQ™ Platform</span>
-      <span class="trust-item">Management Training</span>
-      <span class="trust-item">NLRA Compliance</span>
-      <span class="trust-item">Operations-Lens Vulnerability Analysis</span>
-      <span class="trust-item">Direct Persuasion Consulting</span>
-    </div>
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>NLRB Petition Monitoring</span><span>Root Cause Analysis</span><span>Workforce Sentiment Assessment</span><span>SentimentIQ™ Platform</span><span>Management Training</span><span>NLRA Compliance</span><span>Operations-Lens Vulnerability Analysis</span><span>Direct Persuasion Consulting</span>
+    <span>NLRB Petition Monitoring</span><span>Root Cause Analysis</span><span>Workforce Sentiment Assessment</span><span>SentimentIQ™ Platform</span><span>Management Training</span><span>NLRA Compliance</span><span>Operations-Lens Vulnerability Analysis</span><span>Direct Persuasion Consulting</span>
   </div>
 </div>
 
-<!-- PROBLEM -->
-<section class="problem-section" id="approach">
-  <div class="section-inner">
-    <div class="section-label">The Problem Most Firms Ignore</div>
-    <h2 class="section-title">Traditional labor consulting<br>treats the symptom.<br>We find the <em>source.</em></h2>
-    <div class="problem-layout">
-      <div>
-        <p class="section-body">Most firms arrive when a union has already knocked. They coach your managers on what to say, run a campaign, and leave. The workforce dynamic that created the opening in the first place goes completely unaddressed.</p>
-        <p class="section-body" style="margin-top:1.2rem;">Blue Sky Analytics was built around a different premise: union vulnerability is almost always an operations problem before it becomes a labor problem. Something broke in the relationship between management and the workforce. That break has a cause. And that cause can be found, measured, and fixed.</p>
+<!-- ============ PROBLEM ============ -->
+<section class="sec problem" id="approach">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The Problem Most Firms Ignore</span>
+      <h2>Traditional labor consulting treats the symptom. We find the <em>source.</em></h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-copy rv">
+        <p>Most firms arrive when a union has already knocked. They coach your managers on what to say, run a campaign, and leave. <b>The workforce dynamic that created the opening in the first place goes completely unaddressed.</b></p>
+        <p>Blue Sky Analytics was built around a different premise: union vulnerability is almost always an operations problem before it becomes a labor problem. Something broke in the relationship between management and the workforce.</p>
+        <p><b>That break has a cause. That cause can be found, measured, and fixed.</b> The rest of this page shows you how we do it.</p>
       </div>
-      <div>
-        <div class="insight-card">
-          <div class="insight-card-tag">Field Observation 01</div>
-          <div class="insight-card-text">"By the time a petition is filed, the average workplace has been actively organizing for 9 to 14 months. The signals were always there."</div>
+      <div class="obs-stack">
+        <div class="obs rv d1"><span class="mono">Field Observation 01</span><p>"By the time a petition is filed, the average workplace has been actively organizing for 9 to 14 months. The signals were always there."</p></div>
+        <div class="obs rv d2"><span class="mono">Field Observation 02</span><p>"Employees who say they would vote for a union are not anti-company. They are pro-voice. That is a solvable problem, if you know which voices feel unheard."</p></div>
+        <div class="obs rv d3"><span class="mono">Field Observation 03</span><p>"The highest-vulnerability facilities share one trait: a gap between the culture leadership believes in and the culture employees experience every day."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTELLIGENCE CONSOLE ============ -->
+<section class="console" id="platform">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">SentimentIQ™ Live Console</span>
+      <h2>This is what your workforce looks like <em>when you can finally see it.</em></h2>
+      <p>Explore a sample engagement below. Click through the departments. Watch where the risk concentrates. Then notice the one dimension we keep locked, and why.</p>
+    </div>
+    <div class="console-grid">
+      <div class="dash rv">
+        <div class="dash-top"><b>SentimentIQ™ · Meridian Facility (Sample Data)</b><span class="tag-live"><i></i>LIVE</span></div>
+        <div class="dash-tabs" id="dashTabs">
+          <button class="dtab active" data-dept="all">All Depts</button>
+          <button class="dtab" data-dept="processing">Processing</button>
+          <button class="dtab" data-dept="sanitation">Sanitation</button>
+          <button class="dtab" data-dept="maintenance">Maintenance</button>
+          <button class="dtab" data-dept="logistics">Logistics</button>
         </div>
-        <div class="insight-card">
-          <div class="insight-card-tag">Field Observation 02</div>
-          <div class="insight-card-text">"Employees who say they would vote for a union are not anti-company. They are pro-voice. That is a solvable problem — if you know which voices feel unheard."</div>
+        <div class="dash-body" id="dashBody">
+          <div class="dim" data-key="mgmt"><div class="dim-top"><span class="name">Management Effectiveness</span><span class="score"></span></div><div class="bar"><i></i></div></div>
+          <div class="dim" data-key="comm"><div class="dim-top"><span class="name">Communication Quality</span><span class="score"></span></div><div class="bar"><i></i></div></div>
+          <div class="dim" data-key="pay"><div class="dim-top"><span class="name">Pay &amp; Benefits</span><span class="score"></span></div><div class="bar"><i></i></div></div>
+          <div class="dim" data-key="safety"><div class="dim-top"><span class="name">Safety &amp; Work Conditions</span><span class="score"></span></div><div class="bar"><i></i></div></div>
+          <div class="dim" data-key="exp"><div class="dim-top"><span class="name">General Work Experience</span><span class="score"></span></div><div class="bar"><i></i></div></div>
+          <div class="dim locked">
+            <div class="dim-top"><span class="name">Union Sentiment Index</span><span class="score">3.1 / HIGH</span></div>
+            <div class="bar"><i></i></div>
+            <div class="lock-overlay"><span class="lk">⬡ Union Sentiment Index · Protected</span><a href="#contact">Unlocked in your briefing →</a></div>
+          </div>
         </div>
-        <div class="insight-card">
-          <div class="insight-card-tag">Field Observation 03</div>
-          <div class="insight-card-text">"The facilities we see with the highest union vulnerability share one trait: the gap between what leadership believes the culture is, and what employees experience every day."</div>
+        <div class="dash-foot">
+          <div class="cell"><div class="n" id="fResp">847</div><div class="l">Responses</div></div>
+          <div class="cell"><div class="n" id="fRisk">3</div><div class="l">High-Risk Areas</div></div>
+          <div class="cell"><div class="n" id="fPart">94%</div><div class="l">Participation</div></div>
+        </div>
+      </div>
+      <div class="console-side">
+        <div class="side-card rv d1">
+          <span class="mono-l">Why the scores look honest</span>
+          <h3>No leading questions. No legal exposure.</h3>
+          <p>SentimentIQ™ measures union vulnerability through indirect inference using validated proxy indicators. Employees answer honestly because the questions feel honest. Fully anonymous, fully NLRA-compliant.</p>
+        </div>
+        <div class="side-card rv d2">
+          <span class="mono-l">Resolution</span>
+          <h3>Department. Shift. Supervisor.</h3>
+          <p>Scores are not the product. The product is knowing exactly where the 2.1 lives, which shift it works, and which decisions created it.</p>
+        </div>
+        <div class="side-card side-cta rv d3">
+          <h3>See your own numbers.</h3>
+          <p>The locked row above is the most predictive dimension we measure. We walk through the methodology in a confidential briefing, never in writing.</p>
+          <a href="#contact" class="btn">Request a Briefing</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- APPROACH -->
-<section class="approach-section">
-  <div class="section-inner">
-    <div class="section-label">How We Work</div>
-    <h2 class="section-title">Built for leadership teams<br>who want <em>answers,</em><br>not talking points.</h2>
-    <div class="steps-grid">
-
-      <div class="step-card">
-        <div class="step-num">Step 01</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0a4a7c" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="step-title">Measure the Current State</div>
-        <p class="step-body">We deploy SentimentIQ™ to capture how your workforce feels across six dimensions of workplace experience. Fully anonymous. Fully NLRA-compliant. Brutally honest data.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-num">Step 02</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0a4a7c" stroke-width="1.5" stroke-linecap="round"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
-        </div>
-        <div class="step-title">Diagnose the Root Cause</div>
-        <p class="step-body">We analyze results through an operations lens. Which departments, shifts, or supervisors are driving dissatisfaction? We find the source — not just the score.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-num">Step 03</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0a4a7c" stroke-width="1.5" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg>
-        </div>
-        <div class="step-title">Bridge the Gap</div>
-        <p class="step-body">We define the desired state — a workplace where employees feel genuinely heard — and build a concrete plan to get there. Specific actions, owners, and timelines. Not a theory. A plan.</p>
-      </div>
-
+<!-- ============ SIX DIMENSIONS ============ -->
+<section class="sec dims">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The SentimentIQ™ Framework</span>
+      <h2>Six dimensions. One complete <em>picture.</em></h2>
+      <p>Every workforce challenge traces back to one or more of these six dimensions. Understanding where the gaps are, and how deep they run, is the foundation of everything we do.</p>
+    </div>
+    <div class="dims-grid">
+      <div class="dim-card rv"><span class="idx">Dimension 01</span><h3>Management Effectiveness</h3><p>How employees experience their direct supervisors and leadership chain. Trust, fairness, consistency, and whether management creates an environment where people want to perform.</p><span class="dim-flag">◎ Primary union vulnerability driver</span></div>
+      <div class="dim-card rv d1"><span class="idx">Dimension 02</span><h3>Communication Quality</h3><p>The flow of information between leadership and the workforce. Do employees feel informed, included, and respected in how decisions are communicated and explained?</p></div>
+      <div class="dim-card rv d2"><span class="idx">Dimension 03</span><h3>Pay &amp; Benefits</h3><p>Perceived fairness of compensation relative to contribution and market. Whether employees feel the total package reflects the company's genuine commitment to them.</p><span class="dim-flag">◎ High correlation to organizing interest</span></div>
+      <div class="dim-card rv"><span class="idx">Dimension 04</span><h3>Safety &amp; Work Conditions</h3><p>Physical environment, workload balance, and whether employees feel the company prioritizes their wellbeing. Often a signal layer for deeper trust issues with leadership.</p></div>
+      <div class="dim-card rv d1"><span class="idx">Dimension 05</span><h3>General Work Experience</h3><p>The overall emotional connection employees have with their job, team, and company. Belonging, pride, morale, and whether work feels meaningful day to day.</p></div>
+      <div class="dim-card protected rv d2"><span class="idx">Dimension 06</span><h3>Union Sentiment Index</h3><p>A proprietary inference layer woven throughout the assessment. Measured indirectly through validated proxy indicators. No direct questions that create legal exposure.</p><span class="dim-flag">⬡ Methodology disclosed in briefing only</span></div>
     </div>
   </div>
 </section>
 
-<!-- SENTIMENTIQ PLATFORM -->
-<section class="platform-section" id="platform">
-  <div class="section-inner">
-    <div class="platform-layout">
-      <div>
-        <div class="section-label">SentimentIQ™</div>
-        <h2 class="section-title">Proprietary intelligence.<br><em>Not a survey.</em><br>A diagnostic.</h2>
-        <p class="section-body">SentimentIQ™ is the only workforce assessment platform built specifically to measure union vulnerability through indirect inference — no leading questions, no legal exposure, no tipping your hand. Employees respond honestly because the questions feel honest.</p>
-        <p class="section-body" style="margin-top:1.2rem;">The platform measures six distinct dimensions of workforce sentiment and synthesizes them into a prioritized risk picture your leadership team can act on — department by department, shift by shift, supervisor by supervisor.</p>
-        <div class="platform-badges">
-          <span class="platform-badge">100% Anonymous</span>
-          <span class="platform-badge">NLRA Compliant</span>
-          <span class="platform-badge">Real-Time Dashboard</span>
-          <span class="platform-badge">Mobile Access</span>
-        </div>
-        <div style="margin-top:2rem;">
-          <a href="/SentimentIQ_Executive_Brief.pdf" download style="display:inline-flex;align-items:center;gap:.7rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:.8rem 1.4rem;color:var(--white);text-decoration:none;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.05em;transition:all .3s;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Executive Brief (PDF)
-          </a>
-        </div>
-      </div>
-
-      <div class="siq-dash">
-        <div class="dash-header">
-          <div class="dash-title">SentimentIQ™ — All Departments</div>
-          <div class="dash-live">LIVE</div>
-        </div>
-
-        <div class="dim-row">
-          <div class="dim-label">Management Effectiveness</div>
-          <div class="dim-track"><div class="dim-fill" style="width:42%; background:linear-gradient(90deg,#c0392b,#e74c3c);"></div></div>
-          <div class="dim-val" style="color:#ff6b7a;">2.1</div>
-          <div class="risk-pill r-high">HIGH</div>
-        </div>
-        <div class="dim-row">
-          <div class="dim-label">Communication Quality</div>
-          <div class="dim-track"><div class="dim-fill" style="width:54%; background:linear-gradient(90deg,#c87a00,#ffc107);"></div></div>
-          <div class="dim-val" style="color:#ffc107;">2.7</div>
-          <div class="risk-pill r-med">MED</div>
-        </div>
-        <div class="dim-row">
-          <div class="dim-label">Pay &amp; Benefits</div>
-          <div class="dim-track"><div class="dim-fill" style="width:48%; background:linear-gradient(90deg,#c87a00,#ffc107);"></div></div>
-          <div class="dim-val" style="color:#ffc107;">2.4</div>
-          <div class="risk-pill r-med">MED</div>
-        </div>
-        <div class="dim-row">
-          <div class="dim-label">Safety &amp; Work Conditions</div>
-          <div class="dim-track"><div class="dim-fill" style="width:74%; background:linear-gradient(90deg,#1e8449,#5ce65c);"></div></div>
-          <div class="dim-val" style="color:#5ce65c;">3.7</div>
-          <div class="risk-pill r-low">LOW</div>
-        </div>
-        <div class="dim-row">
-          <div class="dim-label">General Work Experience</div>
-          <div class="dim-track"><div class="dim-fill" style="width:64%; background:linear-gradient(90deg,#1e8449,#5ce65c);"></div></div>
-          <div class="dim-val" style="color:#5ce65c;">3.2</div>
-          <div class="risk-pill r-low">LOW</div>
-        </div>
-        <div class="dim-row">
-          <div class="dim-label" style="color:rgba(255,255,255,0.25);">Union Sentiment Index</div>
-          <div class="dim-track" style="background:rgba(255,255,255,0.03);"><div class="dim-fill" style="width:30%; background:rgba(46,143,212,0.2);"></div></div>
-          <div class="dim-val" style="color:rgba(255,255,255,0.2);">—</div>
-          <div class="risk-pill" style="background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.08);font-size:0.46rem;">PROTECTED</div>
-        </div>
-
-        <div class="dash-tiles">
-          <div class="dash-tile"><div class="dash-tile-n">847</div><div class="dash-tile-l">Responses</div></div>
-          <div class="dash-tile"><div class="dash-tile-n" style="color:#ff6b7a;">3</div><div class="dash-tile-l">High Risk Areas</div></div>
-          <div class="dash-tile"><div class="dash-tile-n">94%</div><div class="dash-tile-l">Participation</div></div>
-        </div>
-      </div>
-
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Advisory Services</span>
+      <h2>What we actually do when we <em>walk in the door.</em></h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc rv"><span class="no">01</span><h3>Workforce Sentiment Assessment</h3><p>Full-facility deployment of SentimentIQ™ with dual-phase interview design. Managers and employees assessed through separate, purpose-built methodologies. A complete picture from both sides of the relationship.</p><span class="go">→</span></div>
+      <div class="svc rv"><span class="no">02</span><h3>Root Cause Analysis</h3><p>We look at your labor challenge through an operations lens. Which scheduling decisions, workload patterns, or communication breakdowns are driving dissatisfaction? We identify the source, then work backward.</p><span class="go">→</span></div>
+      <div class="svc rv"><span class="no">03</span><h3>Direct Persuasion &amp; Campaign Support</h3><p>When timing matters, we provide experienced consultants who work directly with your workforce: ethically, compliantly, and effectively. We know how people make decisions under pressure.</p><span class="go">→</span></div>
+      <div class="svc rv"><span class="no">04</span><h3>Management Training</h3><p>Supervisors are your first line of defense and your greatest opportunity. We train managers to lead in a way that builds loyalty before it is tested, and to handle organizing activity appropriately when it surfaces.</p><span class="go">→</span></div>
+      <div class="svc rv"><span class="no">05</span><h3>NLRA Rights &amp; Compliance Training</h3><p>Your supervisors and HR team need to know exactly what they can and cannot say or do under the National Labor Relations Act. We deliver practical, scenario-based training that sticks.</p><span class="go">→</span></div>
+      <div class="svc rv"><span class="no">06</span><h3>Ongoing Monitoring &amp; NLRB Watch</h3><p>We monitor NLRB petition activity in your industry and geography so you never learn about a developing situation from a federal notice. Early awareness is the most valuable advantage you can have.</p><span class="go">→</span></div>
     </div>
   </div>
 </section>
 
-<!-- SIX DIMENSIONS -->
-<section class="dimensions-section">
-  <div class="section-inner">
-    <div class="section-label">The SentimentIQ™ Framework</div>
-    <h2 class="section-title">Six dimensions.<br>One complete <em>picture.</em></h2>
-    <p class="section-body">Every workforce challenge traces back to one or more of these six dimensions. Understanding where the gaps are — and how deep they run — is the foundation of everything we do.</p>
-    <div class="dim-grid">
-
-      <div class="dim-card">
-        <div class="dim-card-accent"></div>
-        <div class="dim-card-num">Dimension 01</div>
-        <div class="dim-card-name">Management Effectiveness</div>
-        <p class="dim-card-body">How employees experience their direct supervisors and leadership chain. Trust, fairness, consistency, and whether management creates an environment where people want to perform.</p>
-        <div class="dim-card-tag">◎ Primary union vulnerability driver</div>
-      </div>
-
-      <div class="dim-card">
-        <div class="dim-card-accent"></div>
-        <div class="dim-card-num">Dimension 02</div>
-        <div class="dim-card-name">Communication Quality</div>
-        <p class="dim-card-body">The flow of information between leadership and the workforce. Do employees feel informed, included, and respected in how decisions are communicated and explained?</p>
-      </div>
-
-      <div class="dim-card">
-        <div class="dim-card-accent"></div>
-        <div class="dim-card-num">Dimension 03</div>
-        <div class="dim-card-name">Pay &amp; Benefits</div>
-        <p class="dim-card-body">Perceived fairness of compensation relative to contribution and market. Whether employees feel the total package reflects the company's genuine commitment to them.</p>
-        <div class="dim-card-tag">◎ High correlation to organizing interest</div>
-      </div>
-
-      <div class="dim-card">
-        <div class="dim-card-accent"></div>
-        <div class="dim-card-num">Dimension 04</div>
-        <div class="dim-card-name">Safety &amp; Work Conditions</div>
-        <p class="dim-card-body">Physical environment, workload balance, and whether employees feel the company prioritizes their wellbeing. Often a signal layer for deeper trust issues with leadership.</p>
-      </div>
-
-      <div class="dim-card">
-        <div class="dim-card-accent"></div>
-        <div class="dim-card-num">Dimension 05</div>
-        <div class="dim-card-name">General Work Experience</div>
-        <p class="dim-card-body">The overall emotional connection employees have with their job, team, and company. Belonging, pride, morale, and whether work feels meaningful day to day.</p>
-      </div>
-
-      <div class="dim-card">
-        <div class="dim-card-accent"></div>
-        <div class="dim-card-num">Dimension 06</div>
-        <div class="dim-card-name">Union Sentiment Index</div>
-        <p class="dim-card-body">A proprietary inference layer woven throughout the assessment. Measured indirectly through validated proxy indicators — no direct questions that create legal exposure.</p>
-        <div class="dim-card-tag locked">⬡ Methodology not disclosed publicly</div>
-      </div>
-
+<!-- ============ COMPARE ============ -->
+<section class="sec compare">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">What Sets Us Apart</span>
+      <h2>Every firm can tell you you have a problem. We tell you <em>why.</em></h2>
+      <p>The companies that maintain healthy labor relations over time are not the ones who won elections. They are the ones who never needed them. This is what that requires.</p>
+    </div>
+    <div class="cmp-table rv">
+      <div class="cmp-row head"><div>Capability</div><div>Traditional Firms</div><div class="us">Blue Sky Analytics</div></div>
+      <div class="cmp-row"><div>NLRA Campaign Support</div><div class="cmp-yes">Yes</div><div class="us cmp-yes">Yes</div></div>
+      <div class="cmp-row"><div>Management Training</div><div class="cmp-yes">Yes</div><div class="us cmp-yes">Yes</div></div>
+      <div class="cmp-row"><div>Workforce Sentiment Measurement</div><div class="cmp-no">Rarely</div><div class="us cmp-yes">Always</div></div>
+      <div class="cmp-row"><div>Operations-Lens Root Cause Analysis</div><div class="cmp-no">No</div><div class="us cmp-yes">Core method</div></div>
+      <div class="cmp-row"><div>Proprietary Assessment Platform</div><div class="cmp-no">No</div><div class="us cmp-yes">SentimentIQ™</div></div>
+      <div class="cmp-row"><div>Current State / Future State Roadmap</div><div class="cmp-no">No</div><div class="us cmp-yes">Every engagement</div></div>
+      <div class="cmp-row"><div>NLRB Early Warning Monitoring</div><div class="cmp-no">Rarely</div><div class="us cmp-yes">Ongoing</div></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="section-inner">
-    <div class="section-label">Advisory Services</div>
-    <h2 class="section-title">What we actually do<br>when we <em>walk in the door.</em></h2>
-    <div class="services-list">
-
-      <div class="service-row">
-        <div class="service-n">01</div>
-        <div>
-          <div class="service-title">Workforce Sentiment Assessment</div>
-          <p class="service-desc">Full-facility deployment of SentimentIQ™ with dual-phase interview design — managers and employees assessed through separate, purpose-built methodologies. A complete picture from both sides of the relationship.</p>
-        </div>
-        <div class="service-arr">→</div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-n">02</div>
-        <div>
-          <div class="service-title">Root Cause Analysis</div>
-          <p class="service-desc">We look at your labor challenge through an operations lens. Which scheduling decisions, workload patterns, communication breakdowns, or facility-level conditions are driving dissatisfaction? We identify the source, then work backward.</p>
-        </div>
-        <div class="service-arr">→</div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-n">03</div>
-        <div>
-          <div class="service-title">Direct Persuasion &amp; Campaign Support</div>
-          <p class="service-desc">When timing matters, we provide experienced consultants who work directly with your workforce — ethically, compliantly, and effectively. We know how people make decisions under pressure.</p>
-        </div>
-        <div class="service-arr">→</div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-n">04</div>
-        <div>
-          <div class="service-title">Management Training</div>
-          <p class="service-desc">Supervisors are your first line of defense and your greatest opportunity. We train managers to lead in a way that builds loyalty before it is tested — and equip them to handle organizing activity appropriately when it surfaces.</p>
-        </div>
-        <div class="service-arr">→</div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-n">05</div>
-        <div>
-          <div class="service-title">NLRA Rights &amp; Compliance Training</div>
-          <p class="service-desc">Your supervisors and HR team need to know exactly what they can and cannot say or do under the National Labor Relations Act. We deliver practical, scenario-based training that sticks.</p>
-        </div>
-        <div class="service-arr">→</div>
-      </div>
-
-      <div class="service-row">
-        <div class="service-n">06</div>
-        <div>
-          <div class="service-title">Ongoing Monitoring &amp; NLRB Watch</div>
-          <p class="service-desc">We monitor NLRB petition activity in your industry and geography so you never learn about a developing situation from a federal notice. Early awareness is the most valuable advantage you can have.</p>
-        </div>
-        <div class="service-arr">→</div>
-      </div>
-
+<!-- ============ FIT ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Engagement Fit</span>
+      <h2>We are selective about <em>who we work with.</em></h2>
+      <p>Our model produces results for a specific kind of leadership team. Before you request a briefing, see which column describes yours.</p>
     </div>
-  </div>
-</section>
-
-<!-- DIFFERENTIATOR -->
-<section class="diff-section">
-  <div class="section-inner">
-    <div class="diff-layout">
-      <div>
-        <div class="section-label">What Sets Us Apart</div>
-        <h2 class="section-title">Every firm can tell you<br>you have a problem.<br>We tell you <em>why.</em></h2>
-        <p class="section-body">The traditional labor consulting model is reactive by design. A petition gets filed, a consultant gets hired, a campaign gets run. Win or lose, the underlying dynamic is unchanged.</p>
-        <p class="section-body" style="margin-top:1.2rem;">Our model is built on a different belief: the companies that maintain healthy labor relations over time aren't the ones who won elections. They're the ones who never needed them.</p>
-        <p class="section-body" style="margin-top:1.2rem;">Blue Sky Analytics helps you become one of those companies.</p>
+    <div class="fit-grid">
+      <div class="fit-card yes rv">
+        <h3>This is built for you if:</h3>
+        <ul>
+          <li>You lead a multi-site or large-facility operation with hourly workforces</li>
+          <li>You suspect something has shifted but cannot point to the data that proves it</li>
+          <li>You have a petition pending, recent organizing activity nearby, or a known exposure</li>
+          <li>You want the root cause fixed, not just a campaign won</li>
+          <li>You make decisions with data and expect your advisors to bring it</li>
+        </ul>
       </div>
-      <div class="comp-table">
-        <div class="comp-thead">
-          <div class="comp-th">Capability</div>
-          <div class="comp-th">Traditional Firms</div>
-          <div class="comp-th hl">Blue Sky Analytics</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">NLRA Campaign Support</div>
-          <div class="comp-td"><span class="chk">✓</span> Yes</div>
-          <div class="comp-td"><span class="chk">✓</span> Yes</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">Management Training</div>
-          <div class="comp-td"><span class="chk">✓</span> Yes</div>
-          <div class="comp-td"><span class="chk">✓</span> Yes</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">Workforce Sentiment Measurement</div>
-          <div class="comp-td"><span class="xmk">—</span> Rarely</div>
-          <div class="comp-td"><span class="chk">✓</span> Always</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">Operations-Lens Root Cause Analysis</div>
-          <div class="comp-td"><span class="xmk">—</span> No</div>
-          <div class="comp-td"><span class="chk">✓</span> Core method</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">Proprietary Assessment Platform</div>
-          <div class="comp-td"><span class="xmk">—</span> No</div>
-          <div class="comp-td"><span class="chk">✓</span> SentimentIQ™</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">Current State / Future State Roadmap</div>
-          <div class="comp-td"><span class="xmk">—</span> No</div>
-          <div class="comp-td"><span class="chk">✓</span> Every engagement</div>
-        </div>
-        <div class="comp-tr">
-          <div class="comp-td feat">NLRB Early Warning Monitoring</div>
-          <div class="comp-td"><span class="xmk">—</span> Rarely</div>
-          <div class="comp-td"><span class="chk">✓</span> Ongoing</div>
-        </div>
+      <div class="fit-card no rv d1">
+        <h3>This is not for you if:</h3>
+        <ul>
+          <li>You want a generic engagement survey with a glossy report and no follow-through</li>
+          <li>You are looking for the cheapest option rather than the most accurate one</li>
+          <li>You are unwilling to hear what your workforce actually thinks</li>
+          <li>You expect talking points instead of answers</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUOTE -->
-<div class="quote-section">
-  <div class="quote-inner">
-    <p class="quote-text">"The question is never whether your employees have concerns. They always do. The question is whether they feel heard enough that they don't need someone outside the company to hear them for you."</p>
-    <div class="quote-attr">Blue Sky Analytics — Advisory Framework</div>
-  </div>
-</div>
-
-<!-- PROCESS -->
-<section class="process-section" id="process">
-  <div class="section-inner">
-    <div class="section-label">Engagement Structure</div>
-    <h2 class="section-title">From first call<br>to <em>closed gap.</em></h2>
-    <div class="process-steps">
-
-      <div class="p-step">
-        <div class="p-step-dot"><div class="p-step-dot-n">1</div></div>
-        <div>
-          <div class="p-step-title">Confidential Briefing</div>
-          <p class="p-step-desc">A frank conversation about what you're seeing, what you're concerned about, and what success looks like. No proposal until we understand your specific situation. No obligation, no record.</p>
-        </div>
-      </div>
-
-      <div class="p-step">
-        <div class="p-step-dot"><div class="p-step-dot-n">2</div></div>
-        <div>
-          <div class="p-step-title">Assessment Deployment</div>
-          <p class="p-step-desc">SentimentIQ™ deployed across your facility — configured for your headcount, shift structure, and department layout. Employees receive a unique anonymous access code. No email. No traceability. 90%+ participation is the norm.</p>
-        </div>
-      </div>
-
-      <div class="p-step">
-        <div class="p-step-dot"><div class="p-step-dot-n">3</div></div>
-        <div>
-          <div class="p-step-title">Dual-Phase Interview Analysis</div>
-          <p class="p-step-desc">Our consultants conduct structured interviews with both management and a representative cross-section of employees. Combined with platform data, this gives us a three-dimensional picture of where the organization actually stands.</p>
-        </div>
-      </div>
-
-      <div class="p-step">
-        <div class="p-step-dot"><div class="p-step-dot-n">4</div></div>
-        <div>
-          <div class="p-step-title">Findings &amp; Root Cause Report</div>
-          <p class="p-step-desc">A full leadership debrief presenting six-dimension scores, department-level risk rankings, supervisor-level insights, identified root causes, and our interpretation of where union vulnerability actually sits — and why.</p>
-        </div>
-      </div>
-
-      <div class="p-step">
-        <div class="p-step-dot"><div class="p-step-dot-n">5</div></div>
-        <div>
-          <div class="p-step-title">Gap-Close Roadmap</div>
-          <p class="p-step-desc">We define the desired state and build a concrete, phased plan to reach it. Specific actions, specific owners, specific timelines. Not a theory. A plan your team can execute starting the next morning.</p>
-        </div>
-      </div>
-
+<!-- ============ PROCESS ============ -->
+<section class="sec proc" id="process" style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Engagement Structure</span>
+      <h2>From first call to <em>closed gap.</em></h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="draw" id="tlDraw"></div>
+      <div class="tstep rv"><div class="node">1</div><span class="meta">Week 0 · 30 minutes</span><h3>Confidential Briefing</h3><p>A frank conversation about what you are seeing, what concerns you, and what success looks like. No proposal until we understand your specific situation. No obligation, no record.</p></div>
+      <div class="tstep rv"><div class="node">2</div><span class="meta">Weeks 1–2</span><h3>Assessment Deployment</h3><p>SentimentIQ™ deployed across your facility, configured for your headcount, shift structure, and department layout. Employees receive a unique anonymous access code. No email, no traceability. 90%+ participation is the norm.</p></div>
+      <div class="tstep rv"><div class="node">3</div><span class="meta">Weeks 2–4</span><h3>Dual-Phase Interview Analysis</h3><p>Our consultants conduct structured interviews with both management and a representative cross-section of employees. Combined with platform data, this gives a three-dimensional picture of where the organization actually stands.</p></div>
+      <div class="tstep rv"><div class="node">4</div><span class="meta">Week 5</span><h3>Findings &amp; Root Cause Report</h3><p>A full leadership debrief: six-dimension scores, department-level risk rankings, supervisor-level insights, identified root causes, and our interpretation of where union vulnerability actually sits, and why.</p></div>
+      <div class="tstep rv"><div class="node">5</div><span class="meta">Week 6 onward</span><h3>Gap-Close Roadmap</h3><p>We define the desired state and build a concrete, phased plan to reach it. Specific actions, specific owners, specific timelines. Not a theory. A plan your team can execute starting the next morning.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="section-inner" style="max-width:680px; text-align:center;">
-    <div class="cta-badge">Confidential &nbsp;·&nbsp; No Obligation</div>
-    <h2 class="cta-title">The conversation your<br>workforce is having<br><em>already started.</em></h2>
-    <p class="cta-sub">A 30-minute briefing with our team costs you nothing. What you learn in that conversation may be the most valuable intelligence your leadership team receives this year.</p>
-    <form class="cta-form" id="briefingForm" action="https://formspree.io/f/xlgkgloz" method="POST">
-      <input type="email" name="email" class="cta-input" placeholder="Enter your work email" required>
-      <button type="submit" class="cta-submit">Request Briefing</button>
-    </form>
-    <p class="cta-note" id="formNote">All inquiries are confidential. We do not share client information.</p>
+<!-- ============ QUOTE ============ -->
+<section class="quote">
+  <div class="wrap rv">
+    <blockquote>"The question is never whether your employees have concerns. They always do. The question is whether they feel heard enough that they don't need someone outside the company to hear them for you."</blockquote>
+    <cite>Blue Sky Analytics · Advisory Framework</cite>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="rv">
+        <span class="kicker">Confidential · No Obligation</span>
+        <h2 style="font-size:clamp(1.9rem,3.4vw,2.7rem);margin-top:20px">The conversation your workforce is having <em>already started.</em></h2>
+        <p style="margin-top:18px;color:var(--ink-soft)">A 30-minute briefing costs you nothing. What you learn in that conversation may be the most valuable intelligence your leadership team receives this year.</p>
+        <div class="next-steps">
+          <div class="nstep"><b>1. You submit the form</b><span>Two required fields. Under a minute.</span></div>
+          <div class="nstep"><b>2. We respond within one business day</b><span>Directly from a principal. No SDRs, no sequences.</span></div>
+          <div class="nstep"><b>3. We talk for 30 minutes</b><span>You leave with a clearer read on your exposure either way.</span></div>
+        </div>
+        <p style="margin-top:30px;font-size:.85rem;color:var(--ink-soft)">Prefer to start with the overview? <a href="/SentimentIQ_Executive_Brief.pdf" style="color:var(--sky-mid);font-weight:600;text-decoration:underline">Download the SentimentIQ™ Executive Brief (PDF)</a></p>
+      </div>
+      <div class="form-card rv d1">
+        <span class="mono">Request a Briefing</span>
+        <h3>Tell us where to reach you.</h3>
+        <form action="https://formspree.io/f/xlgkgloz" method="POST">
+          <div class="f-row">
+            <div class="f-group"><label for="fname">Name *</label><input id="fname" type="text" name="name" required placeholder="Your name"></div>
+            <div class="f-group"><label for="femail">Work email *</label><input id="femail" type="email" name="email" required placeholder="you@company.com"></div>
+          </div>
+          <div class="f-row">
+            <div class="f-group"><label for="fcompany">Company</label><input id="fcompany" type="text" name="company" placeholder="Company name"></div>
+            <div class="f-group"><label for="fsize">Workforce size</label>
+              <select id="fsize" name="workforce_size">
+                <option value="">Select range</option>
+                <option>Under 100</option>
+                <option>100–500</option>
+                <option>500–2,000</option>
+                <option>2,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="f-group"><label for="fmsg">What are you seeing? (optional)</label><textarea id="fmsg" name="message" rows="4" placeholder="A sentence or two is plenty. We will ask the right questions on the call."></textarea></div>
+          <input type="hidden" name="_subject" value="Briefing Request from blue-skyiq.com">
+          <button type="submit" class="btn btn-amber">Request a Confidential Briefing →</button>
+          <div class="form-trust">🔒 All inquiries are confidential. We do not share client information.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo-name">Blue Sky Analytics</div>
-      <div class="footer-logo-tag">Workforce Intelligence &nbsp;·&nbsp; Labor Risk Advisory</div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand"><b>Blue Sky Analytics</b><span>Workforce Intelligence · Labor Risk Advisory</span></div>
+      <div class="foot-links">
+        <a href="#approach">Approach</a>
+        <a href="/sentimentiq">SentimentIQ™</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="/insights">Insights</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-    <ul class="footer-links">
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#platform">Platform</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="footer-right">blue-skyiq.com</div>
+    <div class="foot-base"><span>© 2026 Blue Sky Analytics</span><span>blue-skyiq.com</span></div>
   </div>
 </footer>
 
+<div class="float-cta" id="floatCta"><a href="#contact" class="btn btn-amber">Request a Briefing →</a></div>
+
 <script>
-  // Nav scroll behavior
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) document.documentElement.classList.add('no-io');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Step cards scroll reveal
-  const stepCards = document.querySelectorAll('.step-card');
-  const cardObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 130);
-      }
-    });
-  }, { threshold: 0.15 });
-  stepCards.forEach(c => cardObs.observe(c));
+  /* ---------- nav state + progress + floating CTA ---------- */
+  var nav = document.getElementById('nav'),
+      prog = document.getElementById('progress'),
+      floatCta = document.getElementById('floatCta'),
+      contact = document.getElementById('contact');
+  function onScroll(){
+    var y = window.scrollY,
+        h = document.documentElement.scrollHeight - window.innerHeight,
+        pct = h > 0 ? (y / h) * 100 : 0;
+    nav.classList.toggle('scrolled', y > 40);
+    prog.style.width = pct + '%';
+    var contactVisible = contact.getBoundingClientRect().top < window.innerHeight;
+    floatCta.classList.toggle('show', pct > 28 && !contactVisible);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 
-  // Process steps reveal
-  const pSteps = document.querySelectorAll('.p-step');
-  const stepObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 100);
-      }
-    });
-  }, { threshold: 0.15 });
-  pSteps.forEach(s => stepObs.observe(s));
+  /* ---------- mobile menu ---------- */
+  var menu = document.getElementById('mobileMenu');
+  document.getElementById('hamBtn').addEventListener('click', function(){ menu.classList.add('open'); });
+  document.getElementById('menuClose').addEventListener('click', function(){ menu.classList.remove('open'); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.remove('open'); }); });
 
-  // Formspree form handler
-  const form = document.getElementById('briefingForm');
-  const formNote = document.getElementById('formNote');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+  /* ---------- reveal on scroll ---------- */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
       });
-      if (response.ok) {
-        form.innerHTML = '<p style="color:var(--sky-deep);font-family:\'Playfair Display\',serif;font-size:1.1rem;padding:1rem 0;text-align:center;">Thank you — we\'ll be in touch shortly.</p>';
-        if (formNote) formNote.style.display = 'none';
-      } else {
-        if (formNote) {
-          formNote.textContent = 'Something went wrong. Please try again.';
-          formNote.style.color = '#c0392b';
-        }
-      }
+    }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv, .tstep').forEach(function(el){
+      el.classList.add('pre');
+      io.observe(el);
     });
+    /* failsafe: never leave on-screen content hidden */
+    setTimeout(function(){
+      document.querySelectorAll('.pre:not(.in)').forEach(function(el){
+        if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+      });
+    }, 2500);
+  } else {
+    document.querySelectorAll('.rv, .tstep').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-  });
-  // Close menu when a link is clicked
-  document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
+  /* ---------- count-up stats ---------- */
+  function countUp(el){
+    var target = parseFloat(el.dataset.target),
+        dec = parseInt(el.dataset.decimal || '0', 10),
+        dur = 1600, start = null;
+    if(reduced){ el.textContent = target.toFixed(dec); return; }
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1),
+          eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target); }
+      });
+    }, {threshold:.6});
+    document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+  } else {
+    document.querySelectorAll('.count').forEach(countUp);
+  }
+
+  /* ---------- SentimentIQ console ---------- */
+  var DATA = {
+    all:        { mgmt:2.1, comm:2.7, pay:2.4, safety:3.7, exp:3.2, resp:'847', risk:'3',  part:'94%' },
+    processing: { mgmt:1.8, comm:2.3, pay:2.2, safety:3.4, exp:2.8, resp:'412', risk:'4',  part:'96%' },
+    sanitation: { mgmt:2.0, comm:2.5, pay:2.1, safety:3.1, exp:2.9, resp:'118', risk:'3',  part:'91%' },
+    maintenance:{ mgmt:3.1, comm:3.0, pay:2.9, safety:4.1, exp:3.6, resp:'94',  risk:'1',  part:'97%' },
+    logistics:  { mgmt:2.6, comm:2.9, pay:2.6, safety:3.8, exp:3.3, resp:'223', risk:'2',  part:'92%' }
+  };
+  function band(v){ return v < 2.5 ? ['risk','HIGH'] : v < 3.2 ? ['warn','MED'] : ['good','LOW']; }
+  function render(dept){
+    var d = DATA[dept];
+    document.querySelectorAll('#dashBody .dim:not(.locked)').forEach(function(row){
+      var v = d[row.dataset.key],
+          b = band(v),
+          bar = row.querySelector('.bar'),
+          fill = row.querySelector('.bar i'),
+          score = row.querySelector('.score');
+      bar.className = 'bar b-' + b[0];
+      score.textContent = v.toFixed(1) + ' / ' + b[1];
+      score.style.color = b[0] === 'risk' ? '#e8765a' : b[0] === 'warn' ? '#e6b85c' : '#5cc294';
+      fill.style.width = '0%';
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){ fill.style.width = (v / 5 * 100) + '%'; });
+      });
+    });
+    document.getElementById('fResp').textContent = d.resp;
+    document.getElementById('fRisk').textContent = d.risk;
+    document.getElementById('fPart').textContent = d.part;
+  }
+  document.querySelectorAll('.dtab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.dtab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      render(tab.dataset.dept);
     });
   });
+  if('IntersectionObserver' in window){
+    var dashSeen = false;
+    var dio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && !dashSeen){ dashSeen = true; render('all'); dio.disconnect(); }
+      });
+    }, {threshold:.3});
+    dio.observe(document.getElementById('dashBody'));
+  } else {
+    render('all');
+  }
+
+  /* ---------- timeline draw ---------- */
+  var tl = document.getElementById('timeline'),
+      draw = document.getElementById('tlDraw');
+  function drawLine(){
+    var r = tl.getBoundingClientRect(),
+        vh = window.innerHeight,
+        progress = Math.min(Math.max((vh * .75 - r.top) / r.height, 0), 1);
+    draw.style.height = (progress * (r.height - 20)) + 'px';
+  }
+  window.addEventListener('scroll', drawLine, {passive:true});
+  drawLine();
+})();
 </script>
 </body>
 </html>
