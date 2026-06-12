@@ -38,7 +38,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;background:r
 .nav-links{display:flex;align-items:center;gap:26px}
 .nav-links a{font-size:.87rem;font-weight:500;color:var(--ink-soft)}
 .nav-links a:hover{color:var(--sky-deep)}
-.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 24px;border-radius:999px;background:var(--sky-deep);color:#fff;transition:all .25s var(--ease)}
+.nav-links a.btn,.nav-links a.btn:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 24px;border-radius:999px;white-space:nowrap;flex-shrink:0;background:var(--sky-deep);color:#fff;transition:all .25s var(--ease)}
 .btn:hover{background:var(--sky-mid);transform:translateY(-2px)}
 .btn-amber{background:var(--amber)}
 .btn-amber:hover{background:#b56e25}
