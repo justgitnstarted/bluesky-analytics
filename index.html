@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/site.css">
+<link rel="stylesheet" href="./assets/site.css?v=20261104c">
 
 </head>
 <body>
@@ -297,7 +297,9 @@
 
   /* menu */
   var mb=document.querySelector('[data-menu]'),mn=document.getElementById('mnav');
-  if(mb&&mn){mb.addEventListener('click',function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');mb.textContent=o?'Close':'Menu';});}
+  var bd=document.createElement('div');bd.className='mnav-backdrop';document.body.appendChild(bd);
+  function setMenu(o){if(!mn)return;mn.classList.toggle('open',o);bd.classList.toggle('open',o);mb.setAttribute('aria-expanded',o?'true':'false');mb.textContent=o?'Close':'Menu';document.body.style.overflow=o?'hidden':'';}
+  if(mb&&mn){mb.addEventListener('click',function(){setMenu(!mn.classList.contains('open'));});bd.addEventListener('click',function(){setMenu(false);});mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});}
 
   /* progress, header, floating cta */
   var prog=document.querySelector('.progress'),head=document.querySelector('.site-head'),fc=document.querySelector('.float-cta'),hero=document.querySelector('.hero'),contact=document.getElementById('contact');
